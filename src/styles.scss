@@ -1,4 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+$spaceColor: #000000;
+$scanLinesColor: rgba(255, 255, 255, 0.123);
+
 body {
-	background: black;
+	background-color: $spaceColor;
+	background-image: linear-gradient($scanLinesColor 1px, transparent 2px);
+	background-size: 1% 1%, 1% 1%;
+	background-position: 0 0, 0 0;
 }
