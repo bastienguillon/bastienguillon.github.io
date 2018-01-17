@@ -1,0 +1,21 @@
+
+svg {
+	border: 1px dashed white;
+}
+.smooth { animation: smooth-spin 2.5s infinite linear; }
+.glitchy { animation: glitchy-spin 1.25s infinite linear; }
+
+@keyframes smooth-spin {
+	0%  { transform: rotate(0deg); }
+	100% { transform: rotate(-360deg); }
+}
+
+@keyframes glitchy-spin {
+	0%  { transform: rotate(0deg); }
+	3% { transform: rotate(10deg); }
+	6% { transform: rotate(12deg); }
+	38% { transform: rotate(-160deg); }
+	48% { transform: rotate(-150deg); }
+	54% { transform: rotate(-250deg); }
+	100% { transform: rotate(-360deg); }
+}
