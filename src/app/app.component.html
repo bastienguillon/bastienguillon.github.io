@@ -1,17 +1,22 @@
-<div [ngClass]="currentGlitchState">
-    <bg-glitchy-text text="Soon." [state]="currentGlitchState"></bg-glitchy-text>
-    <bg-rad-loader [color]="currentGlitchState === glitchStates.Glitchy ? '#fff' : '#000'" [size]="'10em'" [state]="currentGlitchState"></bg-rad-loader>
+<!-- nav -->
+<nav [ngClass]="state">
+	<button (click)="toggleGlitchState($event)">
+		{{ state === glitchStates.Glitchy ? "Glitchy!" : "Boring..." }}
+	</button>
+	<button [ngClass]="state" routerLink="">Home</button>
+	<button [ngClass]="state" routerLink="contact">Contact</button>
+	<button [ngClass]="state" routerLink="tinkering">Tinkering</button>
+</nav>
 
+<main [ngClass]="state">
+	<!-- content -->
+	<router-outlet></router-outlet>
+</main>
 
+<footer [ngClass]="state">
 	<div class="made-with">
-		<span [ngClass]="currentGlitchState">Made with</span>
-		<bg-glitchy-picture [state]="currentGlitchState" jitterSpeed="350"
-							pictureUrl="../assets/angular.svg"
-							pictureHeight="100" pictureWidth="100">
+		<span>Made with</span>
+		<bg-glitchy-picture [state]="state" jitterSpeed="350" pictureUrl="../assets/angular.svg" pictureHeight="120" pictureWidth="120">
 		</bg-glitchy-picture>
 	</div>
-
-    <button (click)="toggleGlitchState($event)" [ngClass]="currentGlitchState">
-        {{ currentGlitchState === glitchStates.Glitchy ? "Glitchy!" : "Boring..." }}
-    </button>
-</div>
+</footer>

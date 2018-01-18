@@ -1,23 +1,25 @@
 import { Component, OnInit } from "@angular/core";
-import { GlitchState } from "../common/iglitable";
+import { GlitchState, IGlitchable } from "../common/iglitable";
+import { GlitchMediatorService } from "./glitch-mediator.service";
 
 @Component({
 	selector: "bg-root",
 	templateUrl: "./app.component.html",
 	styleUrls: ["./app.component.scss"]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements IGlitchable {
+
+	public state: GlitchState;
 
 	public glitchStates: typeof GlitchState = GlitchState;
-	public currentGlitchState: GlitchState;
 
 	title = "app";
 
-	public toggleGlitchState($event): void {
-		this.currentGlitchState = this.currentGlitchState === GlitchState.Boring ? GlitchState.Glitchy : GlitchState.Boring;
+	constructor(private glitchMediator: GlitchMediatorService) {
+		glitchMediator.register(this);
 	}
 
-	public ngOnInit(): void {
-		this.currentGlitchState = this.glitchStates.Glitchy;
+	public toggleGlitchState($event): void {
+		this.glitchMediator.state = this.state === GlitchState.Boring ? GlitchState.Glitchy : GlitchState.Boring;
 	}
 }

@@ -1,8 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
 
-$code-font-stack: 'Source Code Pro', monospace, sans-serif;
+$code-font-stack: "Source Code Pro", monospace, sans-serif;
 
-body {
+html, body {
+    height: 100%;
     margin: 0 !important;
     padding: 0 !important;
 }
