@@ -2,6 +2,15 @@
     <bg-glitchy-text text="Soon." [state]="currentGlitchState"></bg-glitchy-text>
     <bg-rad-loader [color]="currentGlitchState === glitchStates.Glitchy ? '#fff' : '#000'" [size]="'10em'" [state]="currentGlitchState"></bg-rad-loader>
 
+
+	<div class="made-with">
+		<span [ngClass]="currentGlitchState">Made with</span>
+		<bg-glitchy-picture [state]="currentGlitchState" jitterSpeed="350"
+							pictureUrl="../assets/angular.svg"
+							pictureHeight="100" pictureWidth="100">
+		</bg-glitchy-picture>
+	</div>
+
     <button (click)="toggleGlitchState($event)" [ngClass]="currentGlitchState">
         {{ currentGlitchState === glitchStates.Glitchy ? "Glitchy!" : "Boring..." }}
     </button>
