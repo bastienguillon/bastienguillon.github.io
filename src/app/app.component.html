@@ -10,7 +10,7 @@
 
 <main [ngClass]="state">
 	<!-- content -->
-	<router-outlet></router-outlet>
+	<router-outlet (activate)="onActivate($event)" (deactivate)="onDeactivate($event)"></router-outlet>
 </main>
 
 <footer [ngClass]="state">

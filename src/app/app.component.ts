@@ -22,4 +22,14 @@ export class AppComponent implements IGlitchable {
 	public toggleGlitchState($event): void {
 		this.glitchMediator.state = this.state === GlitchState.Boring ? GlitchState.Glitchy : GlitchState.Boring;
 	}
+
+	public onActivate(enteringComponent: IGlitchable): void {
+		// Register the entering component
+		this.glitchMediator.register(enteringComponent);
+	}
+
+	public onDeactivate(leavingComponent: IGlitchable): void {
+		// Remove references to the leaving component so that it can be garbage collected
+		this.glitchMediator.unregister(leavingComponent);
+	}
 }

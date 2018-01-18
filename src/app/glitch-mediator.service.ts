@@ -26,6 +26,10 @@ export class GlitchMediatorService {
 		GlitchMediatorService._listeners.push(listener);
 	}
 
+	/**
+	 * Unregister IGlitchable components when route changes 
+	 * otherwise components will not be garbage collected.
+	 */
 	public unregister(listenerToRemove: IGlitchable): void {
 		const index = GlitchMediatorService._listeners.indexOf(listenerToRemove);
 		if (index !== -1) {

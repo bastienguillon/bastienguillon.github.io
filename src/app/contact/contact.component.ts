@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
 import { GlitchState, IGlitchable } from "../../common/iglitable";
-import { GlitchMediatorService } from "../glitch-mediator.service";
 
 @Component({
 	selector: "bg-contact",
@@ -11,7 +10,5 @@ export class ContactComponent implements IGlitchable {
 
 	public state: GlitchState;
 
-	constructor(private glitchMediatorService: GlitchMediatorService) {
-		glitchMediatorService.register(this);
-	}
+	constructor() { }
 }
