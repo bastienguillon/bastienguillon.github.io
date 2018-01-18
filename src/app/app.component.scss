@@ -1,6 +1,8 @@
+$spaceColor: #000000;
+$scanLinesColor: rgba(255, 255, 255, 0.123);
+
 :host {
     display: block;
-    margin-top: 30vh;
     text-align: center;
 
     bg-glitchy-text {
@@ -11,4 +13,38 @@
     bg-rad-loader {
         display: block;
     }
+    > div {
+        min-height: 100vh;
+        width: 100%;
+        display: inherit;
+        padding-top: 20vh;
+        &.glitchy {
+            background-color: $spaceColor;
+            background-image: linear-gradient($scanLinesColor 1px, transparent 2px);
+            background-size: 1% 1%, 1% 1%;
+            background-position: 0 0, 0 0;
+        }
+        > button {
+            position: absolute;
+            top: 1em;
+            left: 1em;
+
+            border: none;
+            color: white;
+            padding: 1em 2em;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            &.glitchy {
+                background-color: white;
+                color: black;
+            }
+            &.boring {
+                background-color: black;
+                color: white;
+            }
+        }
+    }
+   
 }

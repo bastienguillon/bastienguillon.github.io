@@ -41,10 +41,15 @@
     }
 }
 
-:host > span {
-    color: white;
-    font-family: "Consolas", monospace;
+span {
     font-size: 2.75em;
-    font-weight: normal;
-    @include textGlitch("glitch", 50, white, transparent, red, blue, 1084, 115);
+    &.glitchy {
+        color: white;
+        font-family: "Consolas", monospace;
+        @include textGlitch("glitch", 50, white, transparent, red, blue, 1084, 115);
+    }
+    &.boring {
+        color: black;
+        font-family: Helvetica, Arial, Sans-Serif !important;
+    }
 }

@@ -1,2 +1,8 @@
-<bg-glitchy-text text="Soon."></bg-glitchy-text>
-<bg-rad-loader [color]="'#fff'" [size]="'10em'" [flavor]="'glitchy'"></bg-rad-loader>
+<div [ngClass]="currentGlitchState">
+    <bg-glitchy-text text="Soon." [state]="currentGlitchState"></bg-glitchy-text>
+    <bg-rad-loader [color]="currentGlitchState === glitchStates.Glitchy ? '#fff' : '#000'" [size]="'10em'" [state]="currentGlitchState"></bg-rad-loader>
+
+    <button (click)="toggleGlitchState($event)" [ngClass]="currentGlitchState">
+        {{ currentGlitchState === glitchStates.Glitchy ? "Glitchy!" : "Boring..." }}
+    </button>
+</div>

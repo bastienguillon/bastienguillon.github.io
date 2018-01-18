@@ -1,9 +1,4 @@
-$spaceColor: #000000;
-$scanLinesColor: rgba(255, 255, 255, 0.123);
-
 body {
-	background-color: $spaceColor;
-	background-image: linear-gradient($scanLinesColor 1px, transparent 2px);
-	background-size: 1% 1%, 1% 1%;
-	background-position: 0 0, 0 0;
+    margin: 0 !important;
+    padding: 0 !important;
 }
