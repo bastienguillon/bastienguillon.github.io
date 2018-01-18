@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { GlitchState } from "../common/iglitable"
+import { GlitchState } from "../common/iglitable";
 
 @Component({
 	selector: "bg-root",

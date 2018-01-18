@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { GlitchState, IGlitchable } from "../../common/iglitable"
+import { GlitchState, IGlitchable } from "../../common/iglitable";
 
 @Component({
 	selector: "bg-glitchy-text",
