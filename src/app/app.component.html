@@ -16,7 +16,11 @@
 <footer [ngClass]="state">
 	<div class="made-with">
 		<span>Made with</span>
-		<bg-glitchy-picture [state]="state" jitterSpeed="350" pictureUrl="../assets/angular.svg" pictureHeight="120" pictureWidth="120">
-		</bg-glitchy-picture>
+		<a class="angular-link" href="https://angular.io/">
+			<bg-glitchy-picture [state]="state" jitterSpeed="350" pictureUrl="../assets/angular.svg" pictureHeight="120" pictureWidth="120">
+			</bg-glitchy-picture>
+			<span>Angular 5</span>
+		</a>
+		<span>And nothing else</span>
 	</div>
 </footer>

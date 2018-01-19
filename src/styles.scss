@@ -1,6 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
 
 $code-font-stack: "Source Code Pro", monospace, sans-serif;
+$spaceColor: #000000;
+$scanLinesColor: rgba(255, 255, 255, 0.123);
 
 html, body {
     height: 100%;

@@ -1,8 +1,5 @@
 @import "../styles";
 
-$spaceColor: #000000;
-$scanLinesColor: rgba(255, 255, 255, 0.123);
-
 :host {
     display: flex;
     flex-direction: column;
@@ -20,12 +17,13 @@ $scanLinesColor: rgba(255, 255, 255, 0.123);
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
+            font-size: 1em;
+            font-weight: bold;
             background: transparent;
         }
 
         &.glitchy {
-            background: black;
+            background: $spaceColor;
 
             button {
                 border-color: white;
@@ -48,30 +46,10 @@ $scanLinesColor: rgba(255, 255, 255, 0.123);
 
         &.glitchy {
             background-color: $spaceColor;
-            background-image: linear-gradient($scanLinesColor 1px, transparent 2px);
-            background-size: 0.5%;
-            background-position: 0 0, 0 0;
+            background-image: linear-gradient(0deg, $scanLinesColor 1px, transparent 2px);
+            background-size: 5px 5px;
         }
     }
-
-    // > div {
-    //     font-family: sans-serif;
-    //     min-height: 100vh;
-    //     width: 100%;
-    //     display: inherit;
-
-    //     &.glitchy {
-    //         background-color: $spaceColor;
-    //         background-image: linear-gradient($scanLinesColor 1px, transparent 2px);
-    //         background-size: 0.5%;
-    //         background-position: 0 0, 0 0;
-    //         color: white;
-    //     }
-
-    //     &.boring {
-    //         color: black;
-    //     }
-    // }
 
     > footer {
         flex-grow: 0;
@@ -91,8 +69,15 @@ $scanLinesColor: rgba(255, 255, 255, 0.123);
             background: white;
         }
 
-        .made-with span {
+        .made-with span, .made-with a {
             display: block;
+        }
+        .made-with a {
+            text-decoration: none;
+        }
+        .angular-link {
+            color: rgb(221, 0, 49) !important;
+            margin-bottom: 0.5em;
         }
 
         .made-with {

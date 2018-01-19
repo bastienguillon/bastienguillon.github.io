@@ -1,0 +1,11 @@
+@import "../../styles";
+
+:host div {
+    font-family: $code-font-stack;
+    &.glitchy {
+        color: white;
+    }
+    &.boring {
+        color: black;
+    }
+}
