@@ -3,6 +3,9 @@
 	<button (click)="toggleGlitchState($event)">
 		{{ state === glitchStates.Glitchy ? "Glitchy!" : "Boring..." }}
 	</button>
+	<button (click)="changeLanguage($event)">
+		Change language
+	</button>
 	<button [ngClass]="state" routerLink="">Home</button>
 	<button [ngClass]="state" routerLink="contact">Contact</button>
 	<button [ngClass]="state" routerLink="tinkering">Tinkering</button>
@@ -12,6 +15,7 @@
 	<!-- content -->
 	<router-outlet (activate)="onActivate($event)" (deactivate)="onDeactivate($event)"></router-outlet>
 </main>
+
 
 <footer [ngClass]="state">
 	<div class="made-with">

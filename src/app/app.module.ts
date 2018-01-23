@@ -1,6 +1,12 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 import { RouterModule } from "@angular/router";
+
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { ROUTES } from "./app.routes";
 
@@ -12,6 +18,8 @@ import { HomeComponent } from "./home/home.component";
 import { ContactComponent } from "./contact/contact.component";
 import { TinkeringComponent } from "./tinkering/tinkering.component";
 import { GlitchMediatorService } from "./glitch-mediator.service";
+
+export function HttpLoaderFactory(http: HttpClient) { return new TranslateHttpLoader(http); }
 
 @NgModule({
 	declarations: [
@@ -25,6 +33,14 @@ import { GlitchMediatorService } from "./glitch-mediator.service";
 	],
 	imports: [
 		BrowserModule,
+		HttpClientModule,
+		TranslateModule.forRoot({
+			loader: {
+				provide: TranslateLoader,
+				useFactory: HttpLoaderFactory,
+				deps: [HttpClient]
+			}
+		}),
 		RouterModule.forRoot(ROUTES)
 	],
 	providers: [

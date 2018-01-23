@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { GlitchState, IGlitchable } from "../common/iglitable";
 import { GlitchMediatorService } from "./glitch-mediator.service";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
 	selector: "bg-root",
@@ -15,12 +16,22 @@ export class AppComponent implements IGlitchable {
 
 	title = "app";
 
-	constructor(private glitchMediator: GlitchMediatorService) {
+	constructor(
+		private glitchMediator: GlitchMediatorService,
+		private translateService: TranslateService
+	) {
 		glitchMediator.register(this);
+
+		translateService.setDefaultLang("en");
+		translateService.use("en");
 	}
 
 	public toggleGlitchState($event): void {
 		this.glitchMediator.state = this.state === GlitchState.Boring ? GlitchState.Glitchy : GlitchState.Boring;
+	}
+
+	public changeLanguage($event): void {
+		this.translateService.use(this.translateService.currentLang === "en" ? "fr" : "en");
 	}
 
 	public onActivate(enteringComponent: IGlitchable): void {
