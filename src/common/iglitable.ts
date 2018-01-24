@@ -1,6 +1,8 @@
+//NB: enum values case is important:
+// referenced in .scss files + localStorage
 export enum GlitchState {
-	Glitchy = "glitchy",
-	Boring = "boring"
+	glitchy = "glitchy",
+	boring = "boring"
 }
 
 export interface IGlitchable {

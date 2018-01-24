@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
+import { TranslateService } from "@ngx-translate/core";
+
 import { GlitchState, IGlitchable } from "../common/iglitable";
 import { GlitchMediatorService } from "./glitch-mediator.service";
-import { TranslateService } from "@ngx-translate/core";
+import { SupportedLanguage, LocalStorageService } from "./local-storage.service"
 
 @Component({
 	selector: "bg-root",
@@ -18,20 +20,23 @@ export class AppComponent implements IGlitchable {
 
 	constructor(
 		private glitchMediator: GlitchMediatorService,
-		private translateService: TranslateService
+		private translateService: TranslateService,
+		private localStorageService: LocalStorageService
 	) {
 		glitchMediator.register(this);
-
-		translateService.setDefaultLang("en");
-		translateService.use("en");
+		translateService.setDefaultLang(LocalStorageService.DEFAULT_LANGUAGE);
+		translateService.use(localStorageService.CurrentLanguage);
 	}
 
 	public toggleGlitchState($event): void {
-		this.glitchMediator.state = this.state === GlitchState.Boring ? GlitchState.Glitchy : GlitchState.Boring;
+		this.glitchMediator.State = this.state === GlitchState.boring ? GlitchState.glitchy : GlitchState.boring;
 	}
 
 	public changeLanguage($event): void {
-		this.translateService.use(this.translateService.currentLang === "en" ? "fr" : "en");
+		const newLanguage =
+			this.translateService.currentLang === SupportedLanguage.en ? SupportedLanguage.fr : SupportedLanguage.en;
+		this.translateService.use(newLanguage);
+		this.localStorageService.CurrentLanguage = newLanguage;
 	}
 
 	public onActivate(enteringComponent: IGlitchable): void {

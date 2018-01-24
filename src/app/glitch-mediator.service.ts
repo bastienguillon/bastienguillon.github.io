@@ -1,28 +1,28 @@
 import { Injectable } from "@angular/core";
 import { GlitchState, IGlitchable } from "../common/iglitable";
 import { Component } from "@angular/compiler/src/core";
+import { LocalStorageService } from "./local-storage.service";
 
 @Injectable()
 export class GlitchMediatorService {
 
 	private static _listeners: IGlitchable[] = new Array<IGlitchable>();
-	private static _state: GlitchState = GlitchState.Glitchy;
 
-	public get state(): GlitchState { return GlitchMediatorService._state; }
-	public set state(value: GlitchState) {
-		if (value === GlitchMediatorService._state) {
+	public get State(): GlitchState { return this.localStorageService.CurrentGlitchState; }
+	public set State(value: GlitchState) {
+		if (value === this.State) {
 			return;
 		}
-		GlitchMediatorService._state = value;
+		this.localStorageService.CurrentGlitchState = value;
 		for (const listener of GlitchMediatorService._listeners) {
 			listener.state = value;
 		}
 	}
 
-	constructor() { }
+	constructor(private localStorageService: LocalStorageService) { }
 
 	public register(listener: IGlitchable): void {
-		listener.state = GlitchMediatorService._state;
+		listener.state = this.State;
 		GlitchMediatorService._listeners.push(listener);
 	}
 

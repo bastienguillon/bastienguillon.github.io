@@ -9,7 +9,7 @@ import { GlitchState, IGlitchable } from "../../common/iglitable";
 export class GlitchyPictureComponent implements AfterViewInit, IGlitchable {
 
 	@Input()
-	public state: GlitchState = GlitchState.Boring;
+	public state: GlitchState = GlitchState.boring;
 	@Input()
 	public jitterSpeed: number = 350;
 	@Input()
@@ -39,7 +39,7 @@ export class GlitchyPictureComponent implements AfterViewInit, IGlitchable {
 			glitchInterval = setInterval(() => {
 				clearCanvas();
 				context.drawImage(image, 0, 0, this.pictureWidth, this.pictureHeight);
-				if (this.state === GlitchState.Glitchy) {
+				if (this.state === GlitchState.glitchy) {
 					setTimeout(glitchImg, randInt(this.pictureWidth, this.pictureHeight));
 				}
 			}, this.jitterSpeed);

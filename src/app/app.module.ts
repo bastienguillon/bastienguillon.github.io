@@ -18,6 +18,7 @@ import { HomeComponent } from "./home/home.component";
 import { ContactComponent } from "./contact/contact.component";
 import { TinkeringComponent } from "./tinkering/tinkering.component";
 import { GlitchMediatorService } from "./glitch-mediator.service";
+import { LocalStorageService } from "./local-storage.service";
 
 export function HttpLoaderFactory(http: HttpClient) { return new TranslateHttpLoader(http); }
 
@@ -44,7 +45,8 @@ export function HttpLoaderFactory(http: HttpClient) { return new TranslateHttpLo
 		RouterModule.forRoot(ROUTES)
 	],
 	providers: [
-		GlitchMediatorService
+		GlitchMediatorService,
+		LocalStorageService
 	],
 	bootstrap: [AppComponent]
 })
