@@ -1,7 +1,7 @@
 <!-- nav -->
 <nav [ngClass]="state">
 	<button (click)="toggleGlitchState($event)">
-		{{ state === glitchStates.Glitchy ? "Glitchy!" : "Boring..." }}
+		{{ state === glitchStates.glitchy ? "Glitchy!" : "Boring..." }}
 	</button>
 	<button (click)="changeLanguage($event)">
 		Change language
