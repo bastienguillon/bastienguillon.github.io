@@ -5,44 +5,10 @@
     flex-direction: column;
     height: 100%;
 
-    // nav
-    > nav {
-        padding: 1em;
-
-        button {
-            border-width: .25em;
-            border-style: solid;
-            padding: 1em 2em;
-            margin-right: .5em;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 1em;
-            font-weight: bold;
-            background: transparent;
-        }
-
-        &.glitchy {
-            background: $spaceColor;
-
-            button {
-                border-color: white;
-                color: white;
-            }
-        }
-
-        &.boring {
-            background: white;
-
-            button {
-                border-color: black;
-                color: black;
-            }
-        }
-    }
-
     > main {
         flex: 1 0 auto;
+
+		padding-top: 1.25em;
 
         &.glitchy {
             background-color: $spaceColor;

@@ -1,12 +1,12 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from "@angular/common/http";
 
 import { RouterModule } from "@angular/router";
 
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
 import { ROUTES } from "./app.routes";
 
@@ -19,6 +19,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { TinkeringComponent } from "./tinkering/tinkering.component";
 import { GlitchMediatorService } from "./glitch-mediator.service";
 import { LocalStorageService } from "./local-storage.service";
+import { MainMenuComponent } from "./main-menu/main-menu.component";
 
 export function HttpLoaderFactory(http: HttpClient) { return new TranslateHttpLoader(http); }
 
@@ -30,7 +31,8 @@ export function HttpLoaderFactory(http: HttpClient) { return new TranslateHttpLo
 		GlitchyPictureComponent,
 		HomeComponent,
 		ContactComponent,
-		TinkeringComponent
+		TinkeringComponent,
+		MainMenuComponent
 	],
 	imports: [
 		BrowserModule,

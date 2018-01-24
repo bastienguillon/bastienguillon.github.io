@@ -14,8 +14,6 @@ export class AppComponent implements IGlitchable {
 
 	public state: GlitchState;
 
-	public glitchStates: typeof GlitchState = GlitchState;
-
 	title = "app";
 
 	constructor(
@@ -30,13 +28,6 @@ export class AppComponent implements IGlitchable {
 
 	public toggleGlitchState($event): void {
 		this.glitchMediator.State = this.state === GlitchState.boring ? GlitchState.glitchy : GlitchState.boring;
-	}
-
-	public changeLanguage($event): void {
-		const newLanguage =
-			this.translateService.currentLang === SupportedLanguage.en ? SupportedLanguage.fr : SupportedLanguage.en;
-		this.translateService.use(newLanguage);
-		this.localStorageService.CurrentLanguage = newLanguage;
 	}
 
 	public onActivate(enteringComponent: IGlitchable): void {

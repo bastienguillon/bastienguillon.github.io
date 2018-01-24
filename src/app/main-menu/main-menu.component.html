@@ -1,0 +1,8 @@
+<button (click)="selectGlitchState(glitchStates.boring)" [hidden]="state === glitchStates.boring" >Boring!</button>
+<button (click)="selectGlitchState(glitchStates.glitchy)" [hidden]="state === glitchStates.glitchy">Glitchy!</button>
+<button (click)="changeLanguage($event)">
+	Change language
+</button>
+<button [ngClass]="state" routerLink="">Home</button>
+<button [ngClass]="state" routerLink="contact">Contact</button>
+<button [ngClass]="state" routerLink="tinkering">Tinkering</button>

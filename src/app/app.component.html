@@ -1,14 +1,6 @@
 <!-- nav -->
 <nav [ngClass]="state">
-	<button (click)="toggleGlitchState($event)">
-		{{ state === glitchStates.glitchy ? "Glitchy!" : "Boring..." }}
-	</button>
-	<button (click)="changeLanguage($event)">
-		Change language
-	</button>
-	<button [ngClass]="state" routerLink="">Home</button>
-	<button [ngClass]="state" routerLink="contact">Contact</button>
-	<button [ngClass]="state" routerLink="tinkering">Tinkering</button>
+	<bg-main-menu></bg-main-menu>
 </nav>
 
 <main [ngClass]="state">
