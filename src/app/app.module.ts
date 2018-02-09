@@ -44,7 +44,7 @@ export function HttpLoaderFactory(http: HttpClient) { return new TranslateHttpLo
 				deps: [HttpClient]
 			}
 		}),
-		RouterModule.forRoot(ROUTES)
+		RouterModule.forRoot(ROUTES, { useHash: true })
 	],
 	providers: [
 		GlitchMediatorService,
