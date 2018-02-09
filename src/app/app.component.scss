@@ -11,7 +11,7 @@
 		padding-top: 1.25em;
 
         &.glitchy {
-            background-color: $spaceColor;
+            background-color: map-get($glitchy, primary-background);
             background-image: linear-gradient(0deg, $scanLinesColor 1px, transparent 2px);
             background-size: 5px 5px;
         }
@@ -27,7 +27,7 @@
 
         &.glitchy {
             color: white;
-            background-color: $spaceColor;
+            background-color: map-get($glitchy, primary-background);
         }
 
         &.boring {

@@ -1,39 +1,132 @@
 @import "../../styles";
 
-:host {
-	display: block;
-	padding: .25em;
+// Minimal responsive menu : https://codepen.io/nickisix/pen/julqA
 
-	[hidden] { display: none !important;}
+@include auto-host-state;
 
-    button {
-        border-width: .25em;
-        border-style: solid;
-        padding: 1em 2em;
-        margin-right: .5em;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 1em;
-        font-weight: bold;
-        background: transparent;
-    }
+header {
+	overflow: hidden;
+	background: map-get($map: $glitchy, $key: primary-background);
+	padding: 0 1em;
 
-    &.glitchy {
-        background: $spaceColor;
+	.logo {
+		float: left;
+		font-weight: bold;
+		font-size: 1.5em;
+	}
 
-        button {
-            border-color: white;
-            color: white;
-        }
-    }
-
-    &.boring {
-        background: white;
-
-        button {
-            border-color: black;
-            color: black;
-        }
-    }
+	a, label {
+		display: block;
+		padding: 20px 0;
+		color: #fff;
+		text-decoration: none;
+		line-height: 20px;
+		&:hover {
+			color: #aaa;
+		}
+	}
+	label {
+		float: right;
+		padding: 18px 20px;
+		cursor: pointer;
+		// Burger
+		&:after {
+			content: "\2261";
+			font-size: 1.8em;
+		}
+	}
 }
+
+nav {
+	float: right;
+	max-height: 0;
+	width: 100%;
+	-webkit-transition: max-height 0.3s;
+	-moz-transition: max-height 0.3s;
+	-o-transition: max-height 0.3s;
+	transition: max-height 0.3s;
+}
+nav ul {
+	margin: 0;
+	padding: 0;
+	padding-bottom: 10px;
+}
+nav li {
+	display: block;
+	text-align: center;
+}
+nav a {
+	padding: 10px;
+	width: 100%;
+}
+#nav {
+	display: none;
+}
+#nav:checked ~ nav {
+	max-height: 50vh;
+   /* This can be anything bigger than your nav height. The transition duration works with this */
+}
+@media only screen and (min-width: 700px) {
+	header  {
+		padding: 0 20%;
+		label {
+			display: none;
+		}
+		nav a {
+			display: inline-block;
+			padding: 20px 10px;
+			width: auto;
+		}
+   	}
+	nav {
+		width: auto;
+		max-height: none;
+		ul {
+			padding: 0;
+			padding-right: 10px;
+			li {
+				display: inline-block;
+				text-align: left;
+		   	}
+   		} 
+  	}
+}
+
+
+// :host {
+// 	display: block;
+// 	padding: .25em;
+
+// 	[hidden] { display: none !important;}
+
+//     button {
+//         border-width: .25em;
+//         border-style: solid;
+//         padding: 1em 2em;
+//         margin-right: .5em;
+//         text-align: center;
+//         text-decoration: none;
+//         display: inline-block;
+//         font-size: 1em;
+//         font-weight: bold;
+//         background: transparent;
+//     }
+
+//     &.glitchy {
+//         background: $glitchy-primary-background;
+
+//         button {
+//             border-color: white;
+//             color: white;
+//         }
+//     }
+
+//     &.boring {
+//         background: white;
+
+//         button {
+//             border-color: black;
+//             color: black;
+//         }
+//     }
+// }

@@ -1,8 +1,34 @@
-<button (click)="selectGlitchState(glitchStates.boring)" [hidden]="state === glitchStates.boring" >Boring!</button>
+<header>
+	<a class="logo" href="#">🚀</a>
+
+	<input id="nav" type="checkbox">
+	<label for="nav"></label>
+
+	<nav>
+		<ul>
+			<!-- Navigation -->
+			<li>
+				<a [ngClass]="state" routerLink="">Home</a>
+			</li>
+			<li>
+				<a [ngClass]="state" routerLink="contact">Contact</a>
+			</li>
+			<li>
+				<a [ngClass]="state" routerLink="tinkering">Tinkering</a>
+			</li>
+			<!-- Settings -->
+			<li>
+				<a (click)="selectGlitchState(state === glitchStates.boring ? glitchStates.glitchy : glitchStates.boring)">
+					Change style
+				</a>
+			</li>
+			<li>
+				<a (click)="changeLanguage($event)">Change language</a>
+			</li>
+		</ul>
+	</nav>
+</header>
+
+<!-- <button </button>
 <button (click)="selectGlitchState(glitchStates.glitchy)" [hidden]="state === glitchStates.glitchy">Glitchy!</button>
-<button (click)="changeLanguage($event)">
-	Change language
-</button>
-<button [ngClass]="state" routerLink="">Home</button>
-<button [ngClass]="state" routerLink="contact">Contact</button>
-<button [ngClass]="state" routerLink="tinkering">Tinkering</button>
+<button (click)="changeLanguage($event)">Change language</button>-->

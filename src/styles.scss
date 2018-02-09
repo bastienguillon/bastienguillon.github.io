@@ -1,11 +1,57 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
 
 $code-font-stack: "Source Code Pro", monospace, sans-serif;
-$spaceColor: #000000;
+
+// Map for default glitchy state variables
+$glitchy: (
+	primary-background: #000000,
+	primary-foreground: #ffffff,
+	primary-font-stack: $code-font-stack
+);
+// Map for default boring state variables
+$boring: (
+	primary-background: #ffffff,
+	primary-foreground: #000000,
+	primary-font-stack: $code-font-stack
+);
+
 $scanLinesColor: rgba(255, 255, 255, 0.123);
+
+// Usefull for IGlitchable components. The components need the following HostBinding:
+// @HostBinding("class") public state: GlitchState;
+@mixin auto-host-state {
+	:host {
+		&.glitchy {
+			// background: map-get($glitchy, primary-background);
+			color: map-get($glitchy, primary-foreground);
+			font-family: map-get($glitchy, primary-font-stack);
+		}
+		&.boring {
+			// background: map-get($boring, primary-background);
+			color: map-get($boring, primary-foreground);
+			font-family: map-get($boring, primary-font-stack);
+		}
+	}
+}
+
+@mixin responsive-host-width {
+	:host {
+		display: block;
+		margin: auto;
+
+		@media all and (max-width: 800px) {
+			padding: 1em;
+		}
+		@media screen and (min-width: 800px) {
+			width: 60%;
+		}
+	}
+}
 
 html, body {
     height: 100%;
     margin: 0 !important;
     padding: 0 !important;
 }
+
+p[hidden] { display: none; }

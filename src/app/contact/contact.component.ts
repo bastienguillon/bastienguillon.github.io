@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, HostBinding } from "@angular/core";
 import { GlitchState, IGlitchable } from "../../common/iglitable";
 
 @Component({
@@ -7,7 +7,8 @@ import { GlitchState, IGlitchable } from "../../common/iglitable";
 	styleUrls: ["./contact.component.scss"]
 })
 export class ContactComponent implements IGlitchable {
-
+	
+	@HostBinding("class")
 	public state: GlitchState;
 
 	constructor() { }

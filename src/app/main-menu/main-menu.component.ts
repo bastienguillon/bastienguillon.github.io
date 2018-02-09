@@ -26,7 +26,10 @@ export class MainMenuComponent implements IGlitchable {
 		this.glitchMediator.register(this);
 	}
 
-	public selectGlitchState = (newState: GlitchState) => this.glitchMediator.State = this.state = newState;
+	public selectGlitchState = (newState: GlitchState) => {
+		debugger;
+		this.glitchMediator.State = this.state = newState;
+	}
 
 	public changeLanguage($event): void {
 		const newLanguage =
