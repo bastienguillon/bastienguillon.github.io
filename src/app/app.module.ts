@@ -20,6 +20,7 @@ import { TinkeringComponent } from "./tinkering/tinkering.component";
 import { GlitchMediatorService } from "./glitch-mediator.service";
 import { LocalStorageService } from "./local-storage.service";
 import { MainMenuComponent } from "./main-menu/main-menu.component";
+import { FooterComponent } from "./footer/footer.component";
 
 export function HttpLoaderFactory(http: HttpClient) { return new TranslateHttpLoader(http); }
 
@@ -32,7 +33,8 @@ export function HttpLoaderFactory(http: HttpClient) { return new TranslateHttpLo
 		HomeComponent,
 		ContactComponent,
 		TinkeringComponent,
-		MainMenuComponent
+		MainMenuComponent,
+		FooterComponent
 	],
 	imports: [
 		BrowserModule,

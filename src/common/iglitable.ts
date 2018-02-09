@@ -1,4 +1,4 @@
-//NB: enum values case is important:
+// NB: enum values case is important:
 // referenced in .scss files + localStorage
 export enum GlitchState {
 	glitchy = "glitchy",

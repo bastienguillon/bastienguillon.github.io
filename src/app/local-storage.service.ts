@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { GlitchState } from '../common/iglitable';
+import { Injectable } from "@angular/core";
+import { GlitchState } from "../common/iglitable";
 
 export enum SupportedLanguage {
 	en = "en",
@@ -22,7 +22,7 @@ export class LocalStorageService {
 	}
 
 	//
-	// Glitch state 
+	// Glitch state
 	//
 	private static readonly GLITCH_STATE_KEY = "glitch-state";
 	private static readonly DEFAULT_GLITCH_STATE = GlitchState.glitchy;
@@ -30,7 +30,7 @@ export class LocalStorageService {
 		return LocalStorageService.getOrSetDefault(LocalStorageService.GLITCH_STATE_KEY, LocalStorageService.DEFAULT_GLITCH_STATE, GlitchState);
 	}
 	public set CurrentGlitchState(value: GlitchState) {
-		localStorage.setItem(LocalStorageService.GLITCH_STATE_KEY, value)
+		localStorage.setItem(LocalStorageService.GLITCH_STATE_KEY, value);
 	}
 
 	// Utils

@@ -1,21 +1,11 @@
-<!-- nav -->
-<nav [ngClass]="state">
-	<bg-main-menu></bg-main-menu>
-</nav>
+<!-- Main menu -->
+<bg-main-menu></bg-main-menu>
 
+<!-- Content -->
 <main [ngClass]="state">
 	<!-- content -->
 	<router-outlet (activate)="onActivate($event)" (deactivate)="onDeactivate($event)"></router-outlet>
 </main>
 
-
-<footer [ngClass]="state">
-	<div class="made-with">
-		<span translate="FOOTER.MADE_WITH"></span>
-		<a class="angular-link" href="https://angular.io/" target="_blank">
-			<bg-glitchy-picture [state]="state" jitterSpeed="350" pictureUrl="../assets/angular.svg" pictureHeight="120" pictureWidth="120">
-			</bg-glitchy-picture>
-			<span translate="FOOTER.ANGULAR"></span>
-		</a>
-	</div>
-</footer>
+<!-- Footer -->
+<bg-footer></bg-footer>

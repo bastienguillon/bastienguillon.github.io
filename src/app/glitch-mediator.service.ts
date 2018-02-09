@@ -27,7 +27,7 @@ export class GlitchMediatorService {
 	}
 
 	/**
-	 * Unregister IGlitchable components when route changes 
+	 * Unregister IGlitchable components when route changes
 	 * otherwise components will not be garbage collected.
 	 */
 	public unregister(listenerToRemove: IGlitchable): void {
@@ -36,5 +36,4 @@ export class GlitchMediatorService {
 			GlitchMediatorService._listeners.splice(index, 1);
 		}
 	}
-
 }

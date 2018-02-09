@@ -7,7 +7,7 @@ import { GlitchState, IGlitchable } from "../../common/iglitable";
 	styleUrls: ["./contact.component.scss"]
 })
 export class ContactComponent implements IGlitchable {
-	
+
 	@HostBinding("class")
 	public state: GlitchState;
 

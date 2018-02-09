@@ -3,7 +3,7 @@ import { TranslateService } from "@ngx-translate/core";
 
 import { GlitchState, IGlitchable } from "../common/iglitable";
 import { GlitchMediatorService } from "./glitch-mediator.service";
-import { SupportedLanguage, LocalStorageService } from "./local-storage.service"
+import { SupportedLanguage, LocalStorageService } from "./local-storage.service";
 
 @Component({
 	selector: "bg-root",

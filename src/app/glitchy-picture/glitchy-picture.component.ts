@@ -31,33 +31,34 @@ export class GlitchyPictureComponent implements AfterViewInit, IGlitchable {
 		const image = new Image();
 		let glitchInterval: any;
 
-		image.src = this.pictureUrl;
-		image.onload = () => init();
-
-		const init = () => {
-			clearInterval(glitchInterval);
-			glitchInterval = setInterval(() => {
-				clearCanvas();
-				context.drawImage(image, 0, 0, this.pictureWidth, this.pictureHeight);
-				if (this.state === GlitchState.glitchy) {
-					setTimeout(glitchImg, randInt(this.pictureWidth, this.pictureHeight));
-				}
-			}, this.jitterSpeed);
-		};
-
 		const glitchImg = () => {
-			const jittersCount = randInt(1, 4);
+			const jittersCount = this.randInt(1, 4);
 			for (let i = 0; i < jittersCount; i++) {
 				const x = Math.random() * this.pictureWidth;
 				const y = Math.random() * this.pictureHeight;
 				const spliceWidth = this.pictureWidth - x;
-				const spliceHeight = randInt(5, this.pictureHeight / 3);
+				const spliceHeight = this.randInt(5, this.pictureHeight / 3);
 				context.drawImage(canvas, 0, y, spliceWidth, spliceHeight, x, y, spliceWidth, spliceHeight);
 				context.drawImage(canvas, spliceWidth, y, x, spliceHeight, 0, y, x, spliceHeight);
 			}
 		};
 
-		const randInt = (first: number, second: number): number => Math.floor(Math.random() * (second - first) + first);
-		const clearCanvas = () => context.clearRect(0, 0, this.pictureWidth, this.pictureHeight);
+		const init = () => {
+			clearInterval(glitchInterval);
+			glitchInterval = setInterval(() => {
+				this.clearCanvas(context);
+				context.drawImage(image, 0, 0, this.pictureWidth, this.pictureHeight);
+				if (this.state === GlitchState.glitchy) {
+					setTimeout(glitchImg, this.randInt(this.pictureWidth, this.pictureHeight));
+				}
+			}, this.jitterSpeed);
+		};
+
+		image.src = this.pictureUrl;
+		image.onload = () => init();
 	}
+
+	private randInt = (first: number, second: number): number => Math.floor(Math.random() * (second - first) + first);
+
+	private clearCanvas = (context: CanvasRenderingContext2D) => context.clearRect(0, 0, this.pictureWidth, this.pictureHeight);
 }
