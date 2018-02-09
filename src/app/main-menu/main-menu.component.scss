@@ -2,11 +2,19 @@
 
 // Minimal responsive menu : https://codepen.io/nickisix/pen/julqA
 
-@include auto-host-state;
+:host {
+	display: block;
+	font-family: $code-font-stack;
+	user-select: none;
+	background: map-get($glitchy, primary-background);
+	color: map-get($glitchy, primary-foreground);;
+	a, label {
+		color: map-get($glitchy, primary-foreground);
+	}
+}
 
 header {
 	overflow: hidden;
-	background: map-get($map: $glitchy, $key: primary-background);
 	padding: 0 1em;
 
 	.logo {
@@ -18,7 +26,7 @@ header {
 	a, label {
 		display: block;
 		padding: 20px 0;
-		color: #fff;
+		// color: #fff;
 		text-decoration: none;
 		line-height: 20px;
 		&:hover {
@@ -66,7 +74,7 @@ nav a {
 	max-height: 50vh;
    /* This can be anything bigger than your nav height. The transition duration works with this */
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: $mobile-threshold) {
 	header  {
 		padding: 0 20%;
 		label {

@@ -8,27 +8,21 @@
 		<ul>
 			<!-- Navigation -->
 			<li>
-				<a [ngClass]="state" routerLink="">Home</a>
+				<a [ngClass]="state" routerLink="" translate="NAV.HOME"></a>
 			</li>
 			<li>
-				<a [ngClass]="state" routerLink="contact">Contact</a>
+				<a [ngClass]="state" routerLink="contact" translate="NAV.CONTACT"></a>
 			</li>
 			<li>
-				<a [ngClass]="state" routerLink="tinkering">Tinkering</a>
+				<a [ngClass]="state" routerLink="tinkering" translate="NAV.TINKERING"></a>
 			</li>
 			<!-- Settings -->
 			<li>
-				<a (click)="selectGlitchState(state === glitchStates.boring ? glitchStates.glitchy : glitchStates.boring)">
-					Change style
-				</a>
+				<a (click)="selectGlitchState(state === glitchStates.boring ? glitchStates.glitchy : glitchStates.boring)" translate="NAV.CHANGE_STYLE"></a>
 			</li>
 			<li>
-				<a (click)="changeLanguage($event)">Change language</a>
+				<a (click)="changeLanguage($event)" translate="NAV.CHANGE_LANGUAGE">⛿</a>
 			</li>
 		</ul>
 	</nav>
 </header>
-
-<!-- <button </button>
-<button (click)="selectGlitchState(glitchStates.glitchy)" [hidden]="state === glitchStates.glitchy">Glitchy!</button>
-<button (click)="changeLanguage($event)">Change language</button>-->
