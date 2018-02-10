@@ -1,9 +1,16 @@
 <footer>
-	<div>
-		some long ass text for your viewing pleasure my dude lol
+	<div class="language">
+		<h3>⛿ Language </h3>
+		<ul>
+			<li *ngFor="let language of availableLanguages">
+				<a (click)="changeLanguage(language)">
+					<bg-glitchy-text [text]="language" [state]="state" [onlyOnHover]="true"></bg-glitchy-text>
+				</a>
+			</li>
+		</ul>
 	</div>
 	<div>
-		some text lol
+		some long ass text for your viewing pleasure lol
 	</div>
 	<div class="made-with">
 		<span translate="FOOTER.MADE_WITH"></span>

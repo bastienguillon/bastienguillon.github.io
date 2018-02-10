@@ -5,14 +5,10 @@
 
 :host div {
     
-    text-align: justify;
+   //  text-align: justify;
     
-    > bg-glitchy-text {
-        margin-top: 4em;
-        margin-bottom: 4em;
-    }
-
     > p {
-        font-family: $code-font-stack;
+		  font-family: $code-font-stack;
+		  font-size: 0.95em;
     }
 }

@@ -1,5 +1,7 @@
 <header>
-	<a class="logo" href="#">🚀</a>
+	<a class="logo" href="#">
+		<bg-glitchy-text text="B&G" [state]="state" [onlyOnHover]="false"></bg-glitchy-text>
+	</a>
 
 	<input id="nav" type="checkbox">
 	<label for="nav"></label>
@@ -8,20 +10,26 @@
 		<ul>
 			<!-- Navigation -->
 			<li>
-				<a [ngClass]="state" routerLink="" translate="NAV.HOME"></a>
+				<!-- <a [ngClass]="state" translate="NAV.HOME"></a> -->
+				<a routerLink="">
+					<bg-glitchy-text text="{{ 'NAV.HOME' | translate}}" [state]="state" [onlyOnHover]="true"></bg-glitchy-text>
+				</a>
 			</li>
 			<li>
-				<a [ngClass]="state" routerLink="contact" translate="NAV.CONTACT"></a>
+				<a routerLink="contact">
+					<bg-glitchy-text text="{{ 'NAV.CONTACT' | translate}}" [state]="state" [onlyOnHover]="true"></bg-glitchy-text>
+				</a>
 			</li>
 			<li>
-				<a [ngClass]="state" routerLink="tinkering" translate="NAV.TINKERING"></a>
+				<a routerLink="tinkering">
+					<bg-glitchy-text text="{{ 'NAV.TINKERING' | translate}}" [state]="state" [onlyOnHover]="true"></bg-glitchy-text>
+				</a>
 			</li>
 			<!-- Settings -->
 			<li>
-				<a (click)="selectGlitchState(state === glitchStates.boring ? glitchStates.glitchy : glitchStates.boring)" translate="NAV.CHANGE_STYLE"></a>
-			</li>
-			<li>
-				<a (click)="changeLanguage($event)" translate="NAV.CHANGE_LANGUAGE">⛿</a>
+				<a (click)="selectGlitchState(state === glitchStates.boring ? glitchStates.glitchy : glitchStates.boring)">
+					<bg-glitchy-text text="{{ 'NAV.CHANGE_STYLE' | translate}}" [state]="state" [onlyOnHover]="true"></bg-glitchy-text>
+				</a>
 			</li>
 		</ul>
 	</nav>

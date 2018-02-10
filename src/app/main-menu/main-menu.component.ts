@@ -27,11 +27,4 @@ export class MainMenuComponent implements IGlitchable {
 	}
 
 	public selectGlitchState = (newState: GlitchState) => this.glitchMediator.State = this.state = newState;
-
-	public changeLanguage($event): void {
-		const newLanguage =
-			this.translateService.currentLang === SupportedLanguage.en ? SupportedLanguage.fr : SupportedLanguage.en;
-		this.translateService.use(newLanguage);
-		this.localStorageService.CurrentLanguage = newLanguage;
-	}
 }

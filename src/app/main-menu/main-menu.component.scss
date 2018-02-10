@@ -6,7 +6,7 @@
 	display: block;
 	font-family: $code-font-stack;
 	user-select: none;
-	background: map-get($glitchy, primary-background);
+	background-image: url("../../assets/dark_texture.jpg");
 	color: map-get($glitchy, primary-foreground);;
 	a, label {
 		color: map-get($glitchy, primary-foreground);
@@ -25,17 +25,16 @@ header {
 
 	a, label {
 		display: block;
-		padding: 20px 0;
-		// color: #fff;
+		padding: 1em 0;
 		text-decoration: none;
-		line-height: 20px;
-		&:hover {
-			color: #aaa;
-		}
+		line-height: 1em;
+		// &:hover {
+		// 	color: #aaa;
+		// }
 	}
 	label {
 		float: right;
-		padding: 18px 20px;
+		padding: 1em;
 		cursor: pointer;
 		// Burger
 		&:after {
@@ -62,10 +61,6 @@ nav ul {
 nav li {
 	display: block;
 	text-align: center;
-}
-nav a {
-	padding: 10px;
-	width: 100%;
 }
 #nav {
 	display: none;

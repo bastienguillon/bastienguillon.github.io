@@ -1,1 +1,1 @@
-<span [attr.data-text]="text" [ngClass]="state">{{ text }}</span>
+<span [attr.data-text]="text" [ngClass]="{ glitchy: state === 'glitchy', onlyOnHover: onlyOnHover }">{{ text }}</span>
