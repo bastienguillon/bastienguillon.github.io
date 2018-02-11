@@ -1,17 +1,12 @@
 <footer>
 	<div class="language">
-		<h3>⛿ Language </h3>
+		<h3 translate="FOOTER.LANGUAGE"></h3>
 		<ul>
-			<li *ngFor="let language of availableLanguages">
-				<a (click)="changeLanguage(language)">
-					{{language}}
-				</a>
+			<li *ngFor="let language of availableLanguages" (click)="changeLanguage(language.Code)" [ngClass]="{ active: language.Code === currentLanguageCode }"
+			 [innerHtml]="language.NativeName">
 			</li>
 		</ul>
 	</div>
-	<!-- <div>
-		some long ass text for your viewing pleasure lol
-	</div> -->
 	<div class="made-with">
 		<span translate="FOOTER.MADE_WITH"></span>
 		<a href="https://angular.io/" target="_blank">

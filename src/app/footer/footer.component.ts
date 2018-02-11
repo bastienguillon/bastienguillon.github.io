@@ -1,8 +1,8 @@
 import { Component, HostBinding } from "@angular/core";
 import { GlitchState, IGlitchable } from "../../common/iglitable";
 import { GlitchMediatorService } from "../glitch-mediator.service";
-import { TranslateService } from "@ngx-translate/core";
-import { SupportedLanguage, LocalStorageService } from "../local-storage.service";
+import { TranslateService, LangChangeEvent } from "@ngx-translate/core";
+import { SupportedLanguage, LocalStorageService, SupportedLanguagesInfo, LanguagesInfo } from "../local-storage.service";
 
 @Component({
 	selector: "bg-footer",
@@ -14,7 +14,8 @@ export class FooterComponent implements IGlitchable {
 	@HostBinding("class")
 	public state: GlitchState;
 
-	public availableLanguages: SupportedLanguage[];
+	public currentLanguageCode: SupportedLanguage;
+	public availableLanguages: SupportedLanguagesInfo[];
 
 	constructor(
 		private glitchMediator: GlitchMediatorService,
@@ -22,7 +23,11 @@ export class FooterComponent implements IGlitchable {
 		private localStorageService: LocalStorageService
 	) {
 		glitchMediator.register(this);
-		this.availableLanguages = Object.keys(SupportedLanguage).map(key => SupportedLanguage[key]);
+		this.availableLanguages = LanguagesInfo;
+		this.currentLanguageCode = SupportedLanguage[translateService.currentLang];
+		translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+			this.currentLanguageCode = SupportedLanguage[event.lang];
+		});
 	}
 
 	public changeLanguage(language: SupportedLanguage): void {

@@ -15,7 +15,7 @@
 		display: flex;
 		flex-flow: row wrap;
 		margin: auto;
-	
+
 		/* "Clever" hack to hide left border when columns are collapsed */
 		&::after {
 			content: "";
@@ -44,14 +44,20 @@
 			}
 
 			&.language {
+				min-width: 10%;
 				ul {
 					list-style-type: none;
 					padding-left: 0;
 				}
 				li {
 					margin-bottom: .25em;
+					padding: .1em .5em;
+					&.active {
+						color: #000;
+						background: #fff;
+					}
 				}
-				li a {
+				li  {
 					&:hover {
 						cursor: pointer;
 						text-decoration: underline;

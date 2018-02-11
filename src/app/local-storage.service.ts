@@ -6,6 +6,20 @@ export enum SupportedLanguage {
 	fr = "fr"
 }
 
+export class SupportedLanguagesInfo {
+	public get Code(): SupportedLanguage { return this.code; }
+	public get NativeName(): string { return this.nativeName; }
+	constructor(
+		private code: SupportedLanguage,
+		private nativeName: string
+	) { }
+}
+
+export const LanguagesInfo: SupportedLanguagesInfo[] = [
+	new SupportedLanguagesInfo(SupportedLanguage.en, "English"),
+	new SupportedLanguagesInfo(SupportedLanguage.fr, "Français")
+]
+
 @Injectable()
 export class LocalStorageService {
 
