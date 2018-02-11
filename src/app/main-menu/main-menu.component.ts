@@ -1,10 +1,6 @@
 import { Component, Input, HostBinding } from "@angular/core";
 import { IGlitchable, GlitchState } from "../../common/iglitable";
-import { EventEmitter } from "@angular/core/src/event_emitter";
 import { GlitchMediatorService } from "../glitch-mediator.service";
-import { ThrowStmt } from "@angular/compiler/src/output/output_ast";
-import { TranslateService } from "@ngx-translate/core";
-import { LocalStorageService, SupportedLanguage } from "../local-storage.service";
 
 @Component({
 	selector: "bg-main-menu",
@@ -18,11 +14,7 @@ export class MainMenuComponent implements IGlitchable {
 
 	public glitchStates: typeof GlitchState = GlitchState;
 
-	constructor(
-		private glitchMediator: GlitchMediatorService,
-		private translateService: TranslateService,
-		private localStorageService: LocalStorageService
-	) {
+	constructor(private glitchMediator: GlitchMediatorService) {
 		this.glitchMediator.register(this);
 	}
 

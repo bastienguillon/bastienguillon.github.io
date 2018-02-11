@@ -39,15 +39,35 @@
 			&:not(:first-child) {
 				border-left: 1px solid $scanLinesColor;
 			}
-		}
-		.made-with {
-			text-align: center;
-			span,
-			a {
-				display: block;
+			h3 {
+				margin-top: 0;
 			}
-			a {
-				color: $angular-red;
+
+			&.language {
+				ul {
+					list-style-type: none;
+					padding-left: 0;
+				}
+				li {
+					margin-bottom: .25em;
+				}
+				li a {
+					&:hover {
+						cursor: pointer;
+						text-decoration: underline;
+					}
+				}
+			}
+
+			&.made-with {
+				text-align: center;
+				span,
+				a {
+					display: block;
+				}
+				a {
+					color: $angular-red;
+				}
 			}
 		}
 	}

@@ -4,14 +4,14 @@
 		<ul>
 			<li *ngFor="let language of availableLanguages">
 				<a (click)="changeLanguage(language)">
-					<bg-glitchy-text [text]="language" [state]="state" [onlyOnHover]="true"></bg-glitchy-text>
+					{{language}}
 				</a>
 			</li>
 		</ul>
 	</div>
-	<div>
+	<!-- <div>
 		some long ass text for your viewing pleasure lol
-	</div>
+	</div> -->
 	<div class="made-with">
 		<span translate="FOOTER.MADE_WITH"></span>
 		<a href="https://angular.io/" target="_blank">

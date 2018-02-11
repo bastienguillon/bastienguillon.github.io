@@ -6,7 +6,7 @@
 	display: block;
 	font-family: $code-font-stack;
 	user-select: none;
-	background-image: url("../../assets/dark_texture.jpg");
+	background: map-get($glitchy, primary-background);
 	color: map-get($glitchy, primary-foreground);;
 	a, label {
 		color: map-get($glitchy, primary-foreground);
@@ -21,11 +21,12 @@ header {
 		float: left;
 		font-weight: bold;
 		font-size: 1.5em;
+		margin-top: .6em;
 	}
 
 	a, label {
 		display: block;
-		padding: 1em 0;
+		// padding: 1em 0;
 		text-decoration: none;
 		line-height: 1em;
 		// &:hover {
@@ -94,42 +95,3 @@ nav li {
    		} 
   	}
 }
-
-
-// :host {
-// 	display: block;
-// 	padding: .25em;
-
-// 	[hidden] { display: none !important;}
-
-//     button {
-//         border-width: .25em;
-//         border-style: solid;
-//         padding: 1em 2em;
-//         margin-right: .5em;
-//         text-align: center;
-//         text-decoration: none;
-//         display: inline-block;
-//         font-size: 1em;
-//         font-weight: bold;
-//         background: transparent;
-//     }
-
-//     &.glitchy {
-//         background: $glitchy-primary-background;
-
-//         button {
-//             border-color: white;
-//             color: white;
-//         }
-//     }
-
-//     &.boring {
-//         background: white;
-
-//         button {
-//             border-color: black;
-//             color: black;
-//         }
-//     }
-// }
