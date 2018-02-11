@@ -1,5 +1,17 @@
 {
-    "HOME": {
-        "SOON": "Bientôt."
-    }
+	"NAV": {
+		"HOME": "Accueil",
+		"CONTACT": "Contact",
+		"TINKERING": "Bidouillages",
+		"CHANGE_STYLE": "Changer de style",
+		"CHANGE_LANGUAGE": "Changer la langue"
+	},
+	"HOME": {
+		"SOON": "Bientôt."
+	},
+	"FOOTER": {
+		"LANGUAGE": "Langue",
+		"MADE_WITH": "Fait avec",
+		"ANGULAR": "Angular 5"
+	}
 }

@@ -1,5 +1,17 @@
 {
-    "HOME": {
-        "SOON": "Soon."
-    }
+	"NAV": {
+		"HOME": "Home",
+		"CONTACT": "Contact",
+		"TINKERING": "Tinkering",
+		"CHANGE_STYLE": "Change style",
+		"CHANGE_LANGUAGE": "Change language"
+	},
+	"HOME": {
+		"SOON": "Soon."
+	},
+	"FOOTER": {
+		"LANGUAGE": "Language",
+		"MADE_WITH": "Made with",
+		"ANGULAR": "Angular 5"
+	}
 }
