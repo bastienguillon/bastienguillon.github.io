@@ -3,95 +3,124 @@
 // Minimal responsive menu : https://codepen.io/nickisix/pen/julqA
 
 :host {
-	display: block;
-	font-family: $code-font-stack;
-	user-select: none;
-	background: map-get($glitchy, primary-background);
-	color: map-get($glitchy, primary-foreground);;
-	a, label {
-		color: map-get($glitchy, primary-foreground);
-	}
-	border-bottom: 1px solid map-get($glitchy, primary-border);
+    display: block;
+    font-family: $code-font-stack;
+    user-select: none;
+    background: map-get($glitchy, primary-background);
+    color: map-get($glitchy, primary-foreground);
+
+    a, label {
+        color: map-get($glitchy, primary-foreground);
+    }
+
+    border-bottom: 1px solid map-get($glitchy, primary-border);
 }
 
 header {
-	overflow: hidden;
-	padding: 0 1em;
+    overflow: hidden;
+    padding: 0;
 
-	.logo {
-		float: left;
-		font-weight: bold;
-		font-size: 1.5em;
-		margin-top: .6em;
-	}
+    a {
+        text-decoration: none;
+    }
 
-	a, label {
-		display: block;
-		text-decoration: none;
-		line-height: 1em;
-		// &:hover {
-		// 	color: #aaa;
-		// }
-	}
-	label {
-		float: right;
-		padding: 1em;
-		cursor: pointer;
-		// Burger
-		&:after {
-			content: "\2261";
-			font-size: 1.8em;
-		}
-	}
+    .logo {
+        float: left;
+        font-weight: bold;
+        font-size: 2em;
+        padding: .25em 0;
+    }
+
+    li {
+        padding: .75em 0;
+
+        a {
+            display: block;
+            text-decoration: none;
+            transition: all .1s ease;
+
+            &.active-link {
+                background: map-get($glitchy, primary-foreground);
+                color: map-get($glitchy, primary-background);
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    label {
+        display: block;
+        line-height: 2em;
+        float: right;
+        padding: 1em;
+        cursor: pointer;
+
+        // Burger
+        &:after {
+            content: "\2261";
+            font-size: 1.8em;
+        }
+    }
 }
 
 nav {
-	float: right;
-	max-height: 0;
-	width: 100%;
-	-webkit-transition: max-height 0.3s;
-	-moz-transition: max-height 0.3s;
-	-o-transition: max-height 0.3s;
-	transition: max-height 0.3s;
+    float: right;
+    max-height: 0;
+    width: 100%;
+    -webkit-transition: max-height 0.3s;
+    -moz-transition: max-height 0.3s;
+    -o-transition: max-height 0.3s;
+    transition: max-height 0.3s;
 }
+
 nav ul {
-	margin: 0;
-	padding: 0;
-	padding-bottom: 10px;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 10px;
 }
+
 nav li {
-	display: block;
-	text-align: center;
+    display: block;
+    text-align: center;
 }
+
 #nav {
-	display: none;
+    display: none;
 }
+
 #nav:checked ~ nav {
-	max-height: 50vh;
-   /* This can be anything bigger than your nav height. The transition duration works with this */
+    max-height: 50vh;
+
+    /* This can be anything bigger than your nav height. The transition duration works with this */
 }
+
 @media only screen and (min-width: $mobile-threshold) {
-	header  {
-		padding: 0 20%;
-		label {
-			display: none;
-		}
-		nav a {
-			display: inline-block;
-			padding: 20px 10px;
-			width: auto;
-		}
-   	}
-	nav {
-		width: auto;
-		max-height: none;
-		ul {
-			padding: 0;
-			padding-right: 10px;
-			li {
-				display: inline-block;
-				text-align: left;
-		   	}
-   		} 
-  	}
+    header {
+        padding: 0 20%;
+
+        label {
+            display: none;
+        }
+
+        nav {
+            a {
+                display: inline-block;
+                padding: .2em;
+            }
+        }
+    }
+
+    nav {
+        width: auto;
+
+        ul {
+            padding: 0;
+
+            li {
+                display: inline-block;
+            }
+        }
+    }
 }

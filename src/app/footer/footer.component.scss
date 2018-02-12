@@ -54,6 +54,7 @@
 				li {
 					margin-bottom: .25em;
 					padding: .1em .5em;
+					transition: all .1s ease;
 					&.active {
 						color: #000;
 						background: #fff;

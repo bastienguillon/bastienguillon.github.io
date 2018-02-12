@@ -1,5 +1,5 @@
 <header>
-	<a class="logo" href="#">
+	<a class="logo" routerLink="" title="{{ 'NAV.HOME' | translate }}">
 		<bg-glitchy-text text="B&G" [state]="state" [onlyOnHover]="false"></bg-glitchy-text>
 	</a>
 
@@ -10,19 +10,10 @@
 		<ul>
 			<!-- Navigation -->
 			<li>
-				<a routerLink="">
-					<bg-glitchy-text text="{{ 'NAV.HOME' | translate}}" [state]="state" [onlyOnHover]="true"></bg-glitchy-text>
-				</a>
+				<a routerLink="contact" routerLinkActive="active-link" translate="NAV.CONTACT"></a>
 			</li>
 			<li>
-				<a routerLink="contact">
-					<bg-glitchy-text text="{{ 'NAV.CONTACT' | translate}}" [state]="state" [onlyOnHover]="true"></bg-glitchy-text>
-				</a>
-			</li>
-			<li>
-				<a routerLink="tinkering">
-					<bg-glitchy-text text="{{ 'NAV.TINKERING' | translate}}" [state]="state" [onlyOnHover]="true"></bg-glitchy-text>
-				</a>
+				<a routerLink="tinkering" routerLinkActive="active-link" translate="NAV.TINKERING"></a>
 			</li>
 			<!-- Settings -->
 			<li>
