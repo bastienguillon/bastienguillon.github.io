@@ -11,6 +11,7 @@
 	a, label {
 		color: map-get($glitchy, primary-foreground);
 	}
+	border-bottom: 1px solid map-get($glitchy, primary-border);
 }
 
 header {
@@ -26,7 +27,6 @@ header {
 
 	a, label {
 		display: block;
-		// padding: 1em 0;
 		text-decoration: none;
 		line-height: 1em;
 		// &:hover {

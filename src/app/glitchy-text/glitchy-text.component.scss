@@ -44,7 +44,6 @@
 span {
 	font-size: inherit;
 	&.glitchy:not(.onlyOnHover) {
-		color: white;
 		font-family: $code-font-stack;
 		@include textGlitch("glitch", 50, white, transparent, red, blue, 1084, 115);
 	}

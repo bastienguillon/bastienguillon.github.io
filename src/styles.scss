@@ -1,11 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
+// @import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
 
 $code-font-stack: "Source Code Pro", monospace, sans-serif;
 
 // Map for default glitchy state variables
 $glitchy: (
-	primary-background: #000000,
+	primary-background: #1E1E1E,
 	primary-foreground: #ffffff,
+	primary-border: #454545,
+	primary-color: #8cdcfe,
 	primary-font-stack: $code-font-stack
 );
 // Map for default boring state variables
@@ -58,3 +61,55 @@ html, body {
 }
 
 p[hidden] { display: none; }
+
+button {
+	font-family: $code-font-stack;
+	font-size: 1em;
+	border: none;
+	box-shadow: inset 0 0 0 1px map-get($glitchy, primary-foreground);
+	color: map-get($glitchy, primary-foreground);
+	background: map-get($glitchy, primary-background);
+	padding: .4em .8em;
+	border-radius: .15em;
+	background: transparent;
+	transition: all .1s ease;
+	&:hover {
+		cursor: pointer;
+		color: map-get($glitchy, primary-background);
+		background: map-get($glitchy, primary-foreground);
+	}
+
+	&.primary {
+		box-shadow: none;
+		background: map-get($glitchy, primary-color);
+		color: map-get($glitchy, primary-background);
+		&:hover {
+			background: lighten(map-get($glitchy, primary-color), 10);
+			color: darken(map-get($glitchy, primary-background), 100);
+		}
+	}
+	&.medium {
+		font-size: 1.2em;
+		padding: .6em 1.2em; 
+	}
+}
+
+.xml-comment {
+	display: inline-block;
+	margin: 0;
+	font-family: $code-font-stack;
+	padding: 0 .35em .1em .15em;
+	border-radius: .1em;
+	font-weight: normal;
+	color: map-get($glitchy, primary-color);
+	background: lighten(map-get($glitchy, primary-background), 15);
+	&:before {
+		font-size: .8em;
+		vertical-align: .05em;
+		content: "// ";
+	}
+}
+
+.right {
+	text-align: right;
+}

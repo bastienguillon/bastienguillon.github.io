@@ -3,12 +3,10 @@
 @include responsive-host-width;
 @include auto-host-state;
 
-:host div {
-    
-   //  text-align: justify;
-    
+:host {    
     > p {
-		  font-family: $code-font-stack;
-		  font-size: 0.95em;
-    }
+		text-align: justify;
+		font-family: $code-font-stack;
+		font-size: 0.95em;
+	}
 }

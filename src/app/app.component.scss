@@ -11,8 +11,8 @@
 
 		&.glitchy {
 			background-color: map-get($glitchy, primary-background);
-			background-image: linear-gradient(0deg, $scanLinesColor 1px, transparent 2px);
-			background-size: 5px 5px;
+			// background-image: linear-gradient(0deg, $scanLinesColor 1px, transparent 2px);
+			// background-size: 5px 5px;
 		}
 		&.boring {
 			background-color: map-get($boring, primary-background);
