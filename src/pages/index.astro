@@ -1,4 +1,11 @@
 ---
-import Layout from '../components/Layout.astro';
+import Layout from "../components/Layout.astro";
 ---
-<Layout />
+
+<Layout lang="fr" />
+<script>
+    // Force /fr with a virtual URL
+    document.addEventListener("DOMContentLoaded", () =>
+        history.replaceState(null, "", `/fr`),
+    );
+</script>
