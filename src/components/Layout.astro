@@ -9,16 +9,117 @@ const t = getTranslations(lang);
 <html lang="en">
 	<SEO lang={lang} />
 	<body>
-		<h1>{t.page.title}</h1>
-		<p>{t.page.description}</p>
+		<main>
+			<header>
+				<h1>{t.title}</h1>
+				<p>{t.subtitle}</p>
+			</header>
+
+			<section aria-labelledby="about-me">
+				<h2 id="about-me">{t.introduction.title}</h2>
+				<p>{t.introduction.description}</p>
+			</section>
+
+			<!-- Work experience -->
+			<section aria-labelledby="experience">
+				<h2 id="experience">{t.workExperience.title}</h2>
+				<!-- Lucca  -->
+				<article>
+					<h3>{t.workExperience.lucca.title}</h3>
+					<p>
+						<strong>{t.workExperience.lucca.location}</strong>
+					</p>
+					<p>{t.workExperience.lucca.time}</p>
+					<p set:html={t.workExperience.lucca.description} />
+				</article>
+				<!-- CEA -->
+				<article>
+					<h3>{t.workExperience.cea.title}</h3>
+					<p>
+						<strong>{t.workExperience.cea.location}</strong>
+					</p>
+					<p>{t.workExperience.cea.time}</p>
+					<p set:html={t.workExperience.cea.description} />
+				</article>
+			</section>
+
+			<!-- Education -->
+			<section aria-labelledby="education">
+				<h2 id="education">{t.education.title}</h2>
+				<ul>
+					<li>{t.education.polytech.title}</li>
+					<li>{t.education.dut.title}</li>
+					<li>{t.education.bac.title}</li>
+				</ul>
+			</section>
+
+			<!-- Languages -->
+			<section aria-labelledby="languages">
+				<h2 id="languages">{t.languages.title}</h2>
+				<ul>
+					<li>
+						{t.languages.english.title}
+						{t.languages.english.description}
+					</li>
+					<li>
+						{t.languages.spanish.title}
+						{t.languages.spanish.description}
+					</li>
+				</ul>
+			</section>
+
+			<!-- Certifications -->
+			<section aria-labelledby="certifications">
+				<h2 id="certifications">{t.certifications.title}</h2>
+				<ul>
+					<li>{t.certifications.sst}</li>
+				</ul>
+			</section>
+
+			<!-- Contact -->
+			<section aria-labelledby="contact">
+				<h2 id="contact">{t.contact.title}</h2>
+				<ul>
+					<li>
+						{t.contact.mail.title}
+						<a id="email"></a>
+					</li>
+					<li>
+						{t.contact.github.title}
+						<a href={t.contact.github.url}
+							>{t.contact.github.linkText}</a
+						>
+					</li>
+					<li>
+						{t.contact.linkedin.title}
+						<a href={t.contact.linkedin.url}
+							>{t.contact.linkedin.linkText}</a
+						>
+					</li>
+				</ul>
+			</section>
+
+			<!-- Lang -->
+			<footer>
+				<nav aria-label="Language selection">
+					<a href="/fr/">🇫🇷 Français</a> | <a href="/en/"
+						>🇬🇧 English</a
+					>
+				</nav>
+			</footer>
+		</main>
+
+		<script>
+			// Email obfuscation
+			document.addEventListener("DOMContentLoaded", () => {
+				const user = "bastien.guillon42";
+				const domain = "gmail.com";
+				const emailElement = document.getElementById("email")!;
+				emailElement.textContent = `${user}@${domain}`;
+				emailElement.setAttribute("href", `mailto:${user}@${domain}`);
+			});
+		</script>
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<style></style>
