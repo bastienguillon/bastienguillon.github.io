@@ -39,6 +39,10 @@
         },
         "languages": {
             "title": "Languages",
+            "french": {
+                "title": "French:",
+                "description": "Native speaker"
+            },
             "english": {
                 "title": "English:",
                 "description": "Fluent (C1, TOEIC 930)"
@@ -109,6 +113,10 @@
         },
         "languages": {
             "title": "Langues",
+            "french": {
+                "title": "Français :",
+                "description": "Natif"
+            },
             "english": {
                 "title": "Anglais :",
                 "description": "Courant (C1, TOEIC 930)"
