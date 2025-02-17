@@ -1,0 +1,17 @@
+---
+import { getTranslations, type Lang } from '../utils/getTranslations';
+
+const lang = (Astro.props.lang ?? 'fr') as Lang;
+const t = getTranslations(lang);
+---
+
+<head>
+    <meta charset='UTF-8' />
+    <title>{t.page.title}</title>
+    <meta name='description' content={t.page.description} />
+    <meta property='og:title' content={t.page.title} />
+    <meta property='og:description' content={t.page.description} />
+    <!-- <meta property='og:image' content={t.ogImage} /> -->
+    <link rel='alternate' hreflang='en' href='/en/' />
+    <link rel='alternate' hreflang='fr' href='/fr/' />
+</head>

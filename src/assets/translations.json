@@ -1,0 +1,14 @@
+{
+    "en": {
+        "page": {
+            "title": "Bastien Guillon - Software engineer",
+            "description": "Page description in english"
+        }
+    },
+    "fr": {
+        "page": {
+            "title": "Bastien Guillon - Ingénieur logiciel",
+            "description": "Description de la page en français"
+        }
+    }
+}

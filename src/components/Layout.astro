@@ -1,0 +1,24 @@
+---
+import { getTranslations, type Lang } from "./../utils/getTranslations";
+import SEO from "./SEO.astro";
+const lang = Astro.props.lang as Lang;
+const t = getTranslations(lang);
+---
+
+<!doctype html>
+<html lang="en">
+	<SEO lang={lang} />
+	<body>
+		<h1>{t.page.title}</h1>
+		<p>{t.page.description}</p>
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>
