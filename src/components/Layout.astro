@@ -11,8 +11,16 @@ const t = getTranslations(lang);
 	<body>
 		<main>
 			<header>
-				<h1>{t.title}</h1>
-				<p>{t.subtitle}</p>
+				<div>
+					<h1>{t.title}</h1>
+					<p>{t.subtitle}</p>
+				</div>
+
+				<nav aria-label="Language selection">
+					<a href="/fr/">🇫🇷 Français</a> | <a href="/en/"
+						>🇬🇧 English</a
+					>
+				</nav>
 			</header>
 
 			<section aria-labelledby="about-me">
@@ -102,15 +110,6 @@ const t = getTranslations(lang);
 					</li>
 				</ul>
 			</section>
-
-			<!-- Lang -->
-			<footer>
-				<nav aria-label="Language selection">
-					<a href="/fr/">🇫🇷 Français</a> | <a href="/en/"
-						>🇬🇧 English</a
-					>
-				</nav>
-			</footer>
 		</main>
 
 		<script>
@@ -126,4 +125,71 @@ const t = getTranslations(lang);
 	</body>
 </html>
 
-<style></style>
+<style>
+	@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
+
+	body {
+		font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, arial,
+			sans-serif;
+		margin: 0;
+		padding: 1.5rem 0;
+		display: flex;
+		justify-content: center;
+		background-color: #40434c;
+
+		/* Colors */
+		--primary-color: #568185;
+		--text-color: #e0f7fa;
+	}
+
+	main {
+		max-width: 56rem;
+		padding: 3.5rem 6rem;
+		border-radius: 0.25rem;
+		background-color: var(--primary-color);
+		color: var(--text-color);
+	}
+
+	a {
+		color: var(--text-color);
+		text-decoration: none;
+		font-weight: 500;
+		transition:
+			color 0.3s ease,
+			text-decoration 0.3s ease;
+	}
+
+	/* Hover effect */
+	a:hover {
+		color: #81d4fa;
+		text-decoration: underline;
+	}
+
+	a:focus,
+	a:active {
+		outline: none;
+		text-decoration: underline;
+		color: #4fc3f7;
+	}
+
+	header {
+		display: flex;
+		justify-content: space-between;
+	}
+	header nav {
+	}
+
+	header h1 {
+		margin: 0;
+		text-transform: uppercase;
+	}
+	header p {
+		padding-top: 0;
+		margin-top: 0;
+	}
+
+	h2,
+	h3 {
+		margin-bottom: 0;
+	}
+</style>
