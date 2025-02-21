@@ -1,5 +1,5 @@
 ---
-import { getTranslations, type Lang } from "../utils/getTranslations";
+import { getTranslations, type Lang } from "@utils/getTranslations";
 
 const lang = (Astro.props.lang ?? "fr") as Lang;
 const t = getTranslations(lang);
