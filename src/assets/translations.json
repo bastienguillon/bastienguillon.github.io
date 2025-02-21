@@ -5,56 +5,61 @@
             "description": "Page description in English"
         },
         "title": "Bastien Guillon",
-        "subtitle": "Software Engineer",
-        "introduction": {
-            "title": "About me",
-            "description": "Fullstack developer for over 8 years, I place great importance on code quality while remaining pragmatic about constraints. I enjoy sharing my knowledge, learning from others, and fostering a team dynamic based on mutual support and constructive, benevolent discussions."
-        },
+        "subtitle": "Senior Software Engineer",
+        "introduction": "Fullstack developer for over 8 years, I place great importance on code quality while remaining pragmatic about constraints. I enjoy sharing my knowledge, learning from others, and fostering a team dynamic based on mutual support and constructive, benevolent discussions.",
+        "languageSelectionLabel": "Language selection",
         "workExperience": {
             "title": "Experience",
             "lucca": {
-                "title": "Software Engineer",
+                "jobtitle": "Software Engineer",
                 "location": "Lucca, Paris",
                 "time": "2016 - Present",
                 "description": "<p>Since 2016, I have progressed from a junior fullstack developer to leading a team of 4, then working as a senior developer on new projects. I have worked within different teams, contributing to the implementation of robust software architectures, particularly in DDD and Clean Architecture.</p><p>I have been involved in designing and developing various solutions using .NET Framework & Core, SQL Server, RabbitMQ, and Angular, taking on increasing responsibilities such as team leadership and defining best development practices. These diverse experiences have strengthened my technical skills while contributing to the company's growth.</p>"
             },
             "cea": {
-                "title": "Software Engineering Apprentice",
+                "jobtitle": "Software Engineering Apprentice",
                 "location": "French Alternative Energies and Atomic Energy Commission (CEA), Saclay",
                 "time": "2013 - 2016",
                 "description": "<p>Development of C# and WPF applications for data acquisition and visualization from sensors. Creation of a touch-based development environment for expert system design, integrating image processing algorithms in fuzzy mathematical morphology.</p>"
             }
         },
         "education": {
-            "title": "Education",
-            "polytech": {
-                "title": "2013 / 2016 - Polytech Paris-Saclay (Orsay) - Engineering degree specialized in Computer Science"
-            },
-            "dut": {
-                "title": "2011 / 2013 - IUT d'Orsay (Orsay) - DUT in Computer Science"
-            },
-            "bac": {
-                "title": "2008 / 2011 - Lycée Jean-Baptiste Corot (Savigny-sur-Orge) - Scientific Baccalaureate, honors, European English section"
-            }
+            "title": "Formation",
+            "items": [
+                {
+                    "schoolName": "Polytech Paris-Saclay",
+                    "description": "Engineering degree specialized in Computer Science | 2013 - 2016"
+                },
+                {
+                    "schoolName": "IUT d'Orsay",
+                    "description": "DUT in Computer Science | 2011 - 2013"
+                },
+                {
+                    "schoolName": "Lycée Jean-Baptiste Corot (Savigny-sur-Orge)",
+                    "description": "Scientific Baccalaureate, honors, European English section | 2008 - 2011"
+                }
+            ]
         },
         "languages": {
             "title": "Languages",
-            "french": {
-                "title": "French:",
-                "description": "Native speaker"
-            },
-            "english": {
-                "title": "English:",
-                "description": "Fluent (C1, TOEIC 930)"
-            },
-            "spanish": {
-                "title": "Spanish:",
-                "description": "Basic knowledge"
-            }
+            "items": [
+                {
+                    "title": "French",
+                    "description": "Native speaker"
+                },
+                {
+                    "title": "English",
+                    "description": "Fluent (C1, TOEIC 930)"
+                },
+                {
+                    "title": "Spanish",
+                    "description": "Basic knowledge"
+                }
+            ]
         },
         "certifications": {
             "title": "Certifications",
-            "sst": "Occupational First Aid Responder (SST) - 2025"
+            "sst": "Occupational First Aid Responder (SST) | 2025"
         },
         "contact": {
             "title": "Contact",
@@ -69,31 +74,29 @@
             "linkedin": {
                 "title": "Linkedin:",
                 "url": "https://linkedin.com/in/bastienguillon",
-                "linkText": "linkedin.com/in/bastienguillon/"
+                "linkText": "linkedin.com/in/bastienguillon"
             }
         }
     },
     "fr": {
         "page": {
-            "title": "Bastien Guillon - Ingénieur logiciel",
+            "title": "Bastien Guillon - Ingénieur logiciel senior",
             "description": "Description de la page en français"
         },
         "title": "Bastien Guillon",
-        "subtitle": "Ingénieur logiciel",
-        "introduction": {
-            "title": "À propos",
-            "description": "Développeur fullstack depuis plus de 8 ans, j'accorde une grande importance à la qualité du code tout en restant pragmatique face aux contraintes. J'aime partager mes connaissances, apprendre des autres et contribuer à une dynamique d'équipe basée sur l'entraide et le débat bienveillant et constructif."
-        },
+        "subtitle": "Ingénieur logiciel senior",
+        "introduction": "Développeur fullstack depuis plus de 8 ans, j'accorde une grande importance à la qualité du code tout en restant pragmatique face aux contraintes. J'aime partager mes connaissances, apprendre des autres et contribuer à une dynamique d'équipe basée sur l'entraide et le débat bienveillant et constructif.",
+        "languageSelectionLabel": "Choix de la langue",
         "workExperience": {
             "title": "Expérience",
             "lucca": {
-                "title": "Ingénieur logiciel",
+                "jobtitle": "Ingénieur logiciel",
                 "location": "Lucca, Paris",
                 "time": "2016 - Présent",
                 "description": "<p>Depuis 2016, j'ai évolué de développeur fullstack junior à lead d'une équipe de 4 personnes, puis en tant que développeur senior sur de nouveaux projets. J'ai travaillé au sein de différentes équipes, contribuant à la mise en place d'architectures logicielles robustes, notamment en DDD et Clean Architecture.</p><p>J'ai participé à la conception et au développement de solutions variées utilisant .NET Framework & Core, SQL Server, RabbitMQ et Angular, et j'ai pris en charge des responsabilités croissantes, telles que l'encadrement de l'équipe et la définition de bonnes pratiques de développement. Cette diversité d'expériences m'a permis de renforcer mes compétences techniques tout en contribuant à la croissance de l'entreprise.</p>"
             },
             "cea": {
-                "title": "Apprenti ingénieur logiciel",
+                "jobtitle": "Apprenti ingénieur logiciel",
                 "location": "Commissariat à l'Energie Atomique et aux énergies alternatives (CEA), Saclay",
                 "time": "2013 - 2016",
                 "description": "<p>Développement d'applications en C# et WPF pour l'acquisition et la visualisation de données issues de capteurs. Création d'un environnement de développement tactile pour la conception de systèmes experts, intégrant des algorithmes de traitement d'image en morphologie mathématique floue.</p>"
@@ -101,34 +104,41 @@
         },
         "education": {
             "title": "Formation",
-            "polytech": {
-                "title": "2013 / 2016 - Polytech Paris-Saclay (Orsay) - Diplôme d'ingénieur spécialisé en Informatique"
-            },
-            "dut": {
-                "title": "2011 / 2013 - IUT d'Orsay (Orsay) - DUT Informatique"
-            },
-            "bac": {
-                "title": "2008 / 2011 - Lycée Jean-Baptiste Corot (Savigny-sur-Orge) - Bac S, mention Bien, section européenne anglais"
-            }
+            "items": [
+                {
+                    "schoolName": "Polytech Paris-Saclay",
+                    "description": "Diplôme d'ingénieur spécialisé en Informatique | 2013 - 2016"
+                },
+                {
+                    "schoolName": "IUT d'Orsay",
+                    "description": "DUT Informatique | 2011 - 2013"
+                },
+                {
+                    "schoolName": "Lycée Jean-Baptiste Corot (Savigny-sur-Orge)",
+                    "description": "Bac S, mention Bien, section européenne anglais | 2008 - 2011"
+                }
+            ]
         },
         "languages": {
             "title": "Langues",
-            "french": {
-                "title": "Français :",
-                "description": "Natif"
-            },
-            "english": {
-                "title": "Anglais :",
-                "description": "Courant (C1, TOEIC 930)"
-            },
-            "spanish": {
-                "title": "Espagnol :",
-                "description": "Notions"
-            }
+            "items": [
+                {
+                    "title": "Français",
+                    "description": "Natif"
+                },
+                {
+                    "title": "Anglais",
+                    "description": "Courant (C1, TOEIC 930)"
+                },
+                {
+                    "title": "Espagnol",
+                    "description": "Notions"
+                }
+            ]
         },
         "certifications": {
             "title": "Certifications",
-            "sst": "Sauveteur Secouriste du Travail (SST) - 2025"
+            "sst": "Sauveteur Secouriste du Travail (SST) | 2025"
         },
         "contact": {
             "title": "Contact",
@@ -143,7 +153,7 @@
             "linkedin": {
                 "title": "Linkedin :",
                 "url": "https://linkedin.com/in/bastienguillon",
-                "linkText": "linkedin.com/in/bastienguillon/"
+                "linkText": "linkedin.com/in/bastienguillon"
             }
         }
     }

@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
+@import "tailwindcss";
+
+@tailwind utilities;
+
+body {
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: theme(fontSize.4xl);
+    text-transform: uppercase;
+    font-weight: 600;
+    color: theme(colors.slate.50);
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+}
+
+h2 {
+    font-size: theme(fontSize.lg);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: theme(colors.slate.400);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.03em;
+}
+
+h3 {
+    font-size: theme(fontSize.xl);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: theme(colors.slate.50);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.03em;
+}
+
+h4 {
+    font-size: theme(fontSize.lg);
+    font-weight: 600;
+    color: theme(colors.slate.300);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+p,
+ul li,
+a {
+    color: theme(colors.slate.300);
+}
+
+p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: theme(fontSize.base);
+    line-height: 1.75;
+}
+
+li::marker{
+    color: theme(colors.slate.600);
+}

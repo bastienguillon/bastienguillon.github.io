@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - dev  # Runs when you push to the dev branch
+      - dev
 
 jobs:
   build-and-deploy:
@@ -18,7 +18,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18  # Use the appropriate version for your project
+          node-version: 18
 
       - name: Install dependencies
         run: npm install
@@ -26,9 +26,12 @@ jobs:
       - name: Build the project
         run: npm run build
 
+      - name: Avoid issues with files prefixed by an underscore
+        run: touch dist/.nojekyll
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: master  # Deploy to the `gh-pages` branch
-          folder: dist  # Change this to the actual output directory of your build
+          branch: master
+          folder: dist 
           clean: true

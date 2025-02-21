@@ -1,0 +1,28 @@
+---
+import { type Lang } from "@utils/getTranslations";
+const currentLang = Astro.props.currentLang as Lang;
+---
+
+<a
+    href="/fr/"
+    class="hover:underline fr"
+    class:list={{ underline: currentLang === "fr" }}
+>
+    Français
+</a>
+<a
+    href="/en/"
+    class="hover:underline en ml-3"
+    class:list={{ underline: currentLang === "en" }}
+>
+    English
+</a>
+
+<style>
+    .fr::before {
+        content: "🇫🇷 ";
+    }
+    .en::before {
+        content: "🇬🇧 ";
+    }
+</style>

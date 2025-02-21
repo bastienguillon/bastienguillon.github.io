@@ -1,6 +1,7 @@
 ---
 import { getTranslations, type Lang } from "./../utils/getTranslations";
 import SEO from "./SEO.astro";
+import LanguagePicker from "./LanguagePicker.astro"
 const lang = Astro.props.lang as Lang;
 const t = getTranslations(lang);
 ---
@@ -8,24 +9,20 @@ const t = getTranslations(lang);
 <!doctype html>
 <html lang="en">
 	<SEO lang={lang} />
-	<body>
-		<main>
-			<header>
+	<body class="bg-slate-900 container mx-auto md:px-64 md:my-14 justify-center">
+		<main class="bg-slate-800 p-4 md:p-12 md:rounded-sm">
+			<header class="flex justify-between mb-4">
 				<div>
 					<h1>{t.title}</h1>
-					<p>{t.subtitle}</p>
+					<p><strong>{t.subtitle}</strong></p>
 				</div>
-
-				<nav aria-label="Language selection">
-					<a href="/fr/">🇫🇷 Français</a> | <a href="/en/"
-						>🇬🇧 English</a
-					>
+				<nav aria-label={t.languageSelectionLabel}>
+					<LanguagePicker currentLang={lang} />
 				</nav>
 			</header>
 
-			<section aria-labelledby="about-me">
-				<h2 id="about-me">{t.introduction.title}</h2>
-				<p>{t.introduction.description}</p>
+			<section class="mb-4">
+				<p>{t.introduction}</p>
 			</section>
 
 			<!-- Work experience -->
@@ -33,20 +30,14 @@ const t = getTranslations(lang);
 				<h2 id="experience">{t.workExperience.title}</h2>
 				<!-- Lucca  -->
 				<article>
-					<h3>{t.workExperience.lucca.title}</h3>
-					<p>
-						<strong>{t.workExperience.lucca.location}</strong>
-					</p>
-					<p>{t.workExperience.lucca.time}</p>
+					<h3>{t.workExperience.lucca.location}</h3>
+					<h4>{t.workExperience.lucca.jobtitle} - {t.workExperience.lucca.time}</h4>
 					<p set:html={t.workExperience.lucca.description} />
 				</article>
 				<!-- CEA -->
 				<article>
-					<h3>{t.workExperience.cea.title}</h3>
-					<p>
-						<strong>{t.workExperience.cea.location}</strong>
-					</p>
-					<p>{t.workExperience.cea.time}</p>
+					<h3>{t.workExperience.cea.location}</h3>
+					<h4>{t.workExperience.cea.jobtitle} - {t.workExperience.cea.time}</h4>
 					<p set:html={t.workExperience.cea.description} />
 				</article>
 			</section>
@@ -54,36 +45,37 @@ const t = getTranslations(lang);
 			<!-- Education -->
 			<section aria-labelledby="education">
 				<h2 id="education">{t.education.title}</h2>
-				<ul>
-					<li>{t.education.polytech.title}</li>
-					<li>{t.education.dut.title}</li>
-					<li>{t.education.bac.title}</li>
-				</ul>
+				{t.education.items.map(item => (
+					<h3>{item.schoolName}</h3>
+					<h4>{item.description}</h4>
+				))}
 			</section>
 
 			<!-- Languages -->
 			<section aria-labelledby="languages">
 				<h2 id="languages">{t.languages.title}</h2>
-				<ul>
-					<li>
-						{t.languages.french.title}
-						{t.languages.french.description}
-					</li>
-					<li>
-						{t.languages.english.title}
-						{t.languages.english.description}
-					</li>
-					<li>
-						{t.languages.spanish.title}
-						{t.languages.spanish.description}
-					</li>
-				</ul>
+				<table class="w-auto border-collapse text-left">
+					<thead>
+					<tr class="text-slate-50 text-lg">
+						{t.languages.items.map(item => (
+						<th class="pr-6">{item.title}</th>
+						))}
+					</tr>
+					</thead>
+					<tbody>
+					<tr class="text-slate-300">
+						{t.languages.items.map(item => (
+						<td class="pr-6">{item.description}</td>
+						))}
+					</tr>
+					</tbody>
+				</table>
 			</section>
 
 			<!-- Certifications -->
 			<section aria-labelledby="certifications">
 				<h2 id="certifications">{t.certifications.title}</h2>
-				<ul>
+				<ul class="list-disc list-inside">
 					<li>{t.certifications.sst}</li>
 				</ul>
 			</section>
@@ -91,21 +83,32 @@ const t = getTranslations(lang);
 			<!-- Contact -->
 			<section aria-labelledby="contact">
 				<h2 id="contact">{t.contact.title}</h2>
-				<ul>
+				<ul class="list-disc list-inside">
 					<li>
-						{t.contact.mail.title}
-						<a id="email"></a>
+						<strong>{t.contact.mail.title}</strong>
+						<a id="email" class="hover:underline"></a>
 					</li>
 					<li>
-						{t.contact.github.title}
-						<a href={t.contact.github.url}
-							>{t.contact.github.linkText}</a
+						<strong>{t.contact.github.title}</strong>
+						<a
+							href={t.contact.github.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="hover:underline"
 						>
+							{t.contact.github.linkText}
+						</a>
 					</li>
 					<li>
-						{t.contact.linkedin.title}
-						<a href={t.contact.linkedin.url}
-							>{t.contact.linkedin.linkText}</a
+						<strong>{t.contact.linkedin.title}</strong>
+						<a 
+							href={t.contact.linkedin.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="hover:underline"
+						>
+							{t.contact.linkedin.linkText}
+						</a
 						>
 					</li>
 				</ul>
@@ -113,7 +116,7 @@ const t = getTranslations(lang);
 		</main>
 
 		<script>
-			// Email obfuscation
+			// Email obfuscation to avoid spam bots
 			document.addEventListener("DOMContentLoaded", () => {
 				const user = "bastien.guillon42";
 				const domain = "gmail.com";
@@ -124,72 +127,3 @@ const t = getTranslations(lang);
 		</script>
 	</body>
 </html>
-
-<style>
-	@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
-
-	body {
-		font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, arial,
-			sans-serif;
-		margin: 0;
-		padding: 1.5rem 0;
-		display: flex;
-		justify-content: center;
-		background-color: #40434c;
-
-		/* Colors */
-		--primary-color: #568185;
-		--text-color: #e0f7fa;
-	}
-
-	main {
-		max-width: 56rem;
-		padding: 3.5rem 6rem;
-		border-radius: 0.25rem;
-		background-color: var(--primary-color);
-		color: var(--text-color);
-	}
-
-	a {
-		color: var(--text-color);
-		text-decoration: none;
-		font-weight: 500;
-		transition:
-			color 0.3s ease,
-			text-decoration 0.3s ease;
-	}
-
-	/* Hover effect */
-	a:hover {
-		color: #81d4fa;
-		text-decoration: underline;
-	}
-
-	a:focus,
-	a:active {
-		outline: none;
-		text-decoration: underline;
-		color: #4fc3f7;
-	}
-
-	header {
-		display: flex;
-		justify-content: space-between;
-	}
-	header nav {
-	}
-
-	header h1 {
-		margin: 0;
-		text-transform: uppercase;
-	}
-	header p {
-		padding-top: 0;
-		margin-top: 0;
-	}
-
-	h2,
-	h3 {
-		margin-bottom: 0;
-	}
-</style>
