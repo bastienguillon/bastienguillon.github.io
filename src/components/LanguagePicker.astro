@@ -6,28 +6,41 @@ type Props = {
 };
 
 const { currentLang } = Astro.props;
+
+const french = "Français";
+const english = "English";
 ---
 
-<a
-    href="/fr/"
-    class="hover:underline fr"
-    class:list={{ underline: currentLang === "fr" }}
->
-    Français
-</a>
-<a
-    href="/en/"
-    class="hover:underline en ml-3"
-    class:list={{ underline: currentLang === "en" }}
->
-    English
-</a>
+<!-- French -->
+{
+    currentLang === "fr" ? (
+        <span class="fr text-slate-500">{french}</span>
+    ) : (
+        <a href="/fr/" class="hover:underline fr">
+            {french}
+        </a>
+    )
+}
+<!-- English -->
+{
+    currentLang === "en" ? (
+        <span class="en text-slate-500 ml-3">{english}</span>
+    ) : (
+        <a href="/en/" class="hover:underline en ml-3">
+            {english}
+        </a>
+    )
+}
 
 <style>
     .fr::before {
-        content: "🇫🇷 ";
+        content: "🇫🇷";
+        display: inline-block;
+        margin-right: .25rem;
     }
     .en::before {
-        content: "🇬🇧 ";
+        content: "🇬🇧";
+        display: inline-block;
+        margin-right: .25rem;
     }
 </style>
