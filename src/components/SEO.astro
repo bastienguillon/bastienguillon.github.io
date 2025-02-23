@@ -1,7 +1,11 @@
 ---
 import { getTranslations, type Lang } from "@utils/getTranslations";
 
-const lang = (Astro.props.lang ?? "fr") as Lang;
+type Props = {
+    lang: Lang;
+};
+
+const { lang } = Astro.props as Props;
 const t = getTranslations(lang);
 ---
 

@@ -4,8 +4,13 @@ import SEO from "./SEO.astro";
 import LanguagePicker from "./LanguagePicker.astro"
 import { Image } from "astro:assets";
 import profilePicture from '@assets/profile_picture.jpeg' 
+import DownloadButton from "./DownloadButton.astro";
 
-const lang = Astro.props.lang as Lang;
+type Props = {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
 const t = getTranslations(lang);
 ---
 
@@ -22,11 +27,14 @@ const t = getTranslations(lang);
 						<p>{t.subtitle}</p>
 					</div>
 				</div>
-				<nav aria-label={t.languageSelectionLabel} class="self-start">
+				<nav aria-label={t.languageSelectionLabel} class="self-start flex">
 					<LanguagePicker currentLang={lang} />
+					<div class="ml-3">
+						<DownloadButton href={t.downloadPdfUrl} label={t.downloadPdfLabel} />
+					</div>
 				</nav>
 			</header>
-
+			
 			<section class="mb-4">
 				<p>{t.introduction}</p>
 			</section>

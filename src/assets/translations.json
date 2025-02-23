@@ -8,6 +8,8 @@
         "subtitle": "Senior Software Engineer",
         "introduction": "Fullstack developer for over 8 years, I place great importance on code quality while remaining pragmatic about constraints. I enjoy sharing my knowledge, learning from others, and fostering a team dynamic based on mutual support and constructive, benevolent discussions.",
         "languageSelectionLabel": "Language selection",
+        "downloadPdfLabel": "Download as PDF",
+        "downloadPdfUrl": "",
         "workExperience": {
             "title": "Experience",
             "lucca": {
@@ -87,6 +89,8 @@
         "subtitle": "Ingénieur logiciel senior",
         "introduction": "Développeur fullstack depuis plus de 8 ans, j'accorde une grande importance à la qualité du code tout en restant pragmatique face aux contraintes. J'aime partager mes connaissances, apprendre des autres et contribuer à une dynamique d'équipe basée sur l'entraide et le débat bienveillant et constructif.",
         "languageSelectionLabel": "Choix de la langue",
+        "downloadPdfLabel": "Télécharger en PDF",
+        "downloadPdfUrl": "",
         "workExperience": {
             "title": "Expérience",
             "lucca": {
