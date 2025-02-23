@@ -15,13 +15,13 @@ const t = getTranslations(lang);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<SEO lang={lang} />
 	<body class="bg-slate-900 container mx-auto md:px-64 md:my-14 justify-center">
 		<main class="bg-slate-800 p-4 md:p-12 md:rounded-sm">
 			<header class="flex justify-between items-start mb-4">
 				<div class="flex items-start gap-4">
-					<Image src={profilePicture} alt="Bastien Guillon" class="w-32 h-32 rounded-full object-cover" />
+					<Image src={profilePicture} alt="" aria-hidden class="w-32 h-32 rounded-full object-cover" />
 					<div>
 						<h1>{t.title}</h1>
 						<p>{t.subtitle}</p>
@@ -35,9 +35,9 @@ const t = getTranslations(lang);
 				</nav>
 			</header>
 			
-			<section class="mb-4">
+			<div class="mb-4">
 				<p>{t.introduction}</p>
-			</section>
+			</div>
 
 			<!-- Work experience -->
 			<section aria-labelledby="experience">
@@ -46,13 +46,13 @@ const t = getTranslations(lang);
 				<article>
 					<h3>{t.workExperience.lucca.location}</h3>
 					<h4>{t.workExperience.lucca.jobtitle} - {t.workExperience.lucca.time}</h4>
-					<p set:html={t.workExperience.lucca.description} />
+					<Fragment set:html={t.workExperience.lucca.description} />
 				</article>
 				<!-- CEA -->
 				<article>
 					<h3>{t.workExperience.cea.location}</h3>
 					<h4>{t.workExperience.cea.jobtitle} - {t.workExperience.cea.time}</h4>
-					<p set:html={t.workExperience.cea.description} />
+					<Fragment set:html={t.workExperience.cea.description} />
 				</article>
 			</section>
 
