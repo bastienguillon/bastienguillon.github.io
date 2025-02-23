@@ -1,0 +1,48 @@
+---
+import { newUniqueId } from "@utils/uniqueId";
+
+type Props = {
+    header: string;
+};
+
+const { header } = Astro.props as Props;
+const uniqueId = newUniqueId();
+---
+
+<button
+    role="button"
+    id={`expansion-btn-${uniqueId}`}
+    class="text-slate-300 hover:underline not-expanded">{header}</button
+>
+
+<div
+    id={`expansion-content-${uniqueId}`}
+    class="max-h-0 overflow-hidden ml-3 mt-3 transition-max-height duration-150 ease-in-out"
+>
+    <slot />
+</div>
+
+<script type="module" define:vars={{ uniqueId }}>
+    const btn = document.getElementById(`expansion-btn-${uniqueId}`);
+    const content = document.getElementById(`expansion-content-${uniqueId}`);
+    btn.addEventListener("click", () => {
+        const isOpen = content.classList.contains("max-h-0");
+        content.classList.toggle("max-h-0", !isOpen);
+        content.classList.toggle("max-h-screen", isOpen);
+        btn.classList.toggle("not-expanded", !isOpen);
+        btn.classList.toggle("expanded", isOpen);
+    });
+</script> 
+
+<style>
+    .not-expanded::before {
+        content: "▸";
+        display: inline-block;
+        margin-right: .25rem;
+    }
+    .expanded::before {
+        content: "▾";
+        display: inline-block;
+        margin-right: .25rem;
+    }
+</style>
