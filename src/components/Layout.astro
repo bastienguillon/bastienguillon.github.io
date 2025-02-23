@@ -18,17 +18,17 @@ const t = getTranslations(lang);
 <!doctype html>
 <html lang={lang}>
 	<SEO lang={lang} />
-	<body class="bg-slate-900 container mx-auto md:px-64 md:my-14 justify-center">
-		<main class="bg-slate-800 p-4 md:p-12 md:rounded-sm">
-			<header class="flex justify-between items-start mb-4">
+	<body class="bg-slate-900 lg:container mx-auto lg:px-64 lg:my-14 justify-center">
+		<main class="bg-slate-800 p-4 lg:p-12 lg:rounded-sm">
+			<header class="flex flex-col lg:flex-row justify-between items-start mb-4">
 				<div class="flex items-start gap-4">
 					<Image src={profilePicture} alt="" aria-hidden class="w-32 h-32 rounded-full object-cover" />
 					<div>
-						<h1>{t.title}</h1>
+						<h1 class="text-3xl lg:text-4xl">{t.title}</h1>
 						<p>{t.subtitle}</p>
 					</div>
 				</div>
-				<nav aria-label={t.languageSelectionLabel} class="self-start flex">
+				<nav aria-label={t.languageSelectionLabel} class="self-start flex mt-3">
 					<LanguagePicker currentLang={lang} />
 					<div class="ml-3">
 						<DownloadButton href={t.downloadPdfUrl} label={t.downloadPdfLabel} />
@@ -49,7 +49,7 @@ const t = getTranslations(lang);
 					<h4>{t.workExperience.lucca.jobtitle} - {t.workExperience.lucca.time}</h4>
 					<Fragment set:html={t.workExperience.lucca.description} />
 					<ExpansionPanel header={t.workExperience.lucca.details.title}>
-						<ul class="list-disc list-outside pl-4">
+						<ul class="list-disc list-outside pl-4 text-base">
 							{t.workExperience.lucca.details.items.map(detail => (<li>{detail}</li>))}
 						</ul>
 					</ExpansionPanel>
@@ -95,7 +95,7 @@ const t = getTranslations(lang);
 			<!-- Certifications -->
 			<section aria-labelledby="certifications">
 				<h2 id="certifications">{t.certifications.title}</h2>
-				<ul class="list-disc list-inside">
+				<ul class="list-disc list-inside text-base">
 					<li>{t.certifications.sst}</li>
 				</ul>
 			</section>
@@ -103,7 +103,7 @@ const t = getTranslations(lang);
 			<!-- Contact -->
 			<section aria-labelledby="contact">
 				<h2 id="contact">{t.contact.title}</h2>
-				<ul class="list-disc list-inside">
+				<ul class="list-disc list-inside text-base">
 					<li>
 						<strong>{t.contact.mail.title}</strong>
 						<a id="email" class="hover:underline"></a>

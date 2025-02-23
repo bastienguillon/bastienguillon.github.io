@@ -23,7 +23,7 @@ body {
 }
 
 h1 {
-    font-size: theme(fontSize.4xl);
+    /* font-size: theme(fontSize.4xl); */
     text-transform: uppercase;
     font-weight: 600;
     color: theme(colors.slate.50);
