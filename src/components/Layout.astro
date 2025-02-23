@@ -2,6 +2,9 @@
 import { getTranslations, type Lang } from "./../utils/getTranslations";
 import SEO from "./SEO.astro";
 import LanguagePicker from "./LanguagePicker.astro"
+import { Image } from "astro:assets";
+import profilePicture from '@assets/profile_picture.jpeg' 
+
 const lang = Astro.props.lang as Lang;
 const t = getTranslations(lang);
 ---
@@ -11,12 +14,15 @@ const t = getTranslations(lang);
 	<SEO lang={lang} />
 	<body class="bg-slate-900 container mx-auto md:px-64 md:my-14 justify-center">
 		<main class="bg-slate-800 p-4 md:p-12 md:rounded-sm">
-			<header class="flex justify-between mb-4">
-				<div>
-					<h1>{t.title}</h1>
-					<p><strong>{t.subtitle}</strong></p>
+			<header class="flex justify-between items-start mb-4">
+				<div class="flex items-start gap-4">
+					<Image src={profilePicture} alt="Bastien Guillon" class="w-32 h-32 rounded-full object-cover" />
+					<div>
+						<h1>{t.title}</h1>
+						<p>{t.subtitle}</p>
+					</div>
 				</div>
-				<nav aria-label={t.languageSelectionLabel}>
+				<nav aria-label={t.languageSelectionLabel} class="self-start">
 					<LanguagePicker currentLang={lang} />
 				</nav>
 			</header>

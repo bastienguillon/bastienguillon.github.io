@@ -1,4 +1,4 @@
-import translations from '../assets/translations.json';
+import translations from '@assets/translations.json';
 
 export type Lang =
     | 'en'
