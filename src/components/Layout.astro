@@ -46,7 +46,7 @@ const t = getTranslations(lang);
 				<!-- Lucca  -->
 				<article>
 					<h3>{t.workExperience.lucca.location}</h3>
-					<h4>{t.workExperience.lucca.jobtitle} - {t.workExperience.lucca.time}</h4>
+					<h4>{t.workExperience.lucca.jobtitle} | {t.workExperience.lucca.time}</h4>
 					<Fragment set:html={t.workExperience.lucca.description} />
 					<ExpansionPanel header={t.workExperience.lucca.details.title}>
 						<ul class="list-disc list-outside pl-4 text-base">
@@ -57,7 +57,7 @@ const t = getTranslations(lang);
 				<!-- CEA -->
 				<article>
 					<h3>{t.workExperience.cea.location}</h3>
-					<h4>{t.workExperience.cea.jobtitle} - {t.workExperience.cea.time}</h4>
+					<h4>{t.workExperience.cea.jobtitle} | {t.workExperience.cea.time}</h4>
 					<Fragment set:html={t.workExperience.cea.description} />
 				</article>
 			</section>
