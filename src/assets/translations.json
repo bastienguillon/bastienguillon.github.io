@@ -36,7 +36,7 @@
                 "jobtitle": "Software Engineering Apprentice",
                 "location": "French Alternative Energies and Atomic Energy Commission (CEA), Saclay",
                 "time": "2013 - 2016",
-                "description": "<p>Development of C# and WPF applications for data acquisition and visualization from sensors. Creation of a touch-based development environment for expert system design, integrating image processing algorithms in fuzzy mathematical morphology.</p>"
+                "description": "<p>Development of C# and WPF applications for sensor data acquisition and visualization. Designed a touch-based development environment for expert system design. Developed image processing algorithms and implemented fuzzy mathematical morphology operators.</p>"
             }
         },
         "education": {
@@ -131,7 +131,7 @@
                 "jobtitle": "Apprenti ingénieur logiciel",
                 "location": "Commissariat à l'Energie Atomique et aux énergies alternatives (CEA), Saclay",
                 "time": "2013 - 2016",
-                "description": "<p>Développement d'applications en C# et WPF pour l'acquisition et la visualisation de données issues de capteurs. Création d'un environnement de développement tactile pour la conception de systèmes experts, intégrant des algorithmes de traitement d'image en morphologie mathématique floue.</p>"
+                "description": "<p>Développement d'applications en C# et WPF pour l'acquisition et la visualisation de données issues de capteurs. Création d'un environnement de développement tactile pour la conception de systèmes experts. Développement d'algorithmes de traitement d'image, implémentation des opérateurs de la morphologie mathématique floue.</p>"
             }
         },
         "education": {
